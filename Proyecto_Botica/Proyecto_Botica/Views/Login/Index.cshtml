@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+<h1 class="login__title">Login</h1>
+<div class="login__area">
+    <form asp-action="Login" method="post" class="login__form">
+        <div class="login__content grid">
+            <div class="login__box">
+                <input type="email" id="email" name="Email" required placeholder=" " class="login__input">
+                <label for="email" class="login__label">Correo</label>
+                <i class="ri-mail-fill login__icon"></i>
+            </div>
+
+            <div class="login__box">
+                <input type="password" id="password" name="Password" required placeholder=" " class="login__input">
+                <label for="password" class="login__label">Contraseña</label>
+                <i class="ri-eye-off-fill login__icon login__password" id="loginPassword"></i>
+            </div>
+        </div>
+
+        <a href="#" class="login__forgot">¿Olvidaste tu contraseña?</a>
+
+        <button type="submit" class="login__button">Iniciar sesión</button>
+    </form>
+
+    <div class="login__social">
+        <p class="login__social-title">O inicia sesión con</p>
+        <div class="login__social-links">
+            <a href="#" class="login__social-link">
+                <img src="~/img/icon-google.svg" alt="image" class="login__social-img">
+            </a>
+
+            <a href="#" class="login__social-link">
+                <img src="~/img/icon-facebook.svg" alt="image" class="login__social-img">
+            </a>
+
+            <a href="#" class="login__social-link">
+                <img src="~/img/icon-apple.svg" alt="image" class="login__social-img">
+            </a>
+        </div>
+    </div>
+
+    <p class="login__switch">
+        ¿No tienes una cuenta?
+        <button id="loginButtonRegister">Crear cuenta</button>
+    </p>
+</div>
