@@ -1,0 +1,41 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    padding-left: 50px;
+    padding-right: 30px; 
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #333;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.btn {
+    font-size: 1rem; 
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    margin-right: 10px;
+    
+}
+
+form {
+    margin-top: 20px;
+}
