@@ -23,6 +23,7 @@
             <th>@Html.DisplayNameFor(model => model.FechaVencimiento)</th>
             <th>@Html.DisplayNameFor(model => model.Precio)</th>
             <th>@Html.DisplayNameFor(model => model.Stock)</th>
+            <th>Imagen</th>
             <th>Acciones</th>
         </tr>
     </thead>
@@ -38,6 +39,16 @@
                 <td>@Html.DisplayFor(modelItem => item.FechaVencimiento)</td>
                 <td>@Html.DisplayFor(modelItem => item.Precio)</td>
                 <td>@Html.DisplayFor(modelItem => item.Stock)</td>
+                <td>
+                    @if (!string.IsNullOrEmpty(item.Imagen)) 
+                    {
+                        <img src="@item.Imagen" alt="@item.Nombre" style="max-width: 100px; max-height: 100px; width: auto; height: auto;" />
+                    }
+                    else
+                    {
+                        <span>Sin imagen</span>
+                    }
+                </td>
                 <td>
                     @Html.ActionLink("Editar", "EditProducto", new { id = item.IdProducto }, new { @class = "btn btn-info" })
                     @Html.ActionLink("Eliminar", "EliminarProducto", new { id = item.IdProducto },
