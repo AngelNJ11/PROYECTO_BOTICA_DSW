@@ -20,9 +20,10 @@ body {
 }
 
 form {
-    width: 100%;
+    background-color: #fff;
     padding: 20px; 
-    margin-left: 17%;
+    border-radius: 10px;
+    margin-left: 25%;
 }
 
 .form-group label {
@@ -30,7 +31,6 @@ form {
     color: #333;
     display: block;
     margin-bottom: 8px;
-    margin-left: 2px;
 }
 
 .btn {
@@ -40,5 +40,5 @@ form {
     margin-right: 10px;
 }
 .imagen {
-    width: 33%;
+    width: 200%;
 }

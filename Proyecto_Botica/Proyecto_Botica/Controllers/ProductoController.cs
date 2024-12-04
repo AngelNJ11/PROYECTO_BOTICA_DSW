@@ -93,11 +93,12 @@ namespace Proyecto_Botica.Controllers
                         Nombre = dr.GetString(1),
                         Descripcion = dr.GetString(2),
                         idCategoria = dr.GetInt32(3),
-                        FechaFabricacion = dr.IsDBNull(4) ? (DateTime?)null : dr.GetDateTime(4),
-                        FechaVencimiento = dr.IsDBNull(5) ? (DateTime?)null : dr.GetDateTime(5),
-                        Precio = dr.GetDecimal(6),
-                        Stock = dr.GetInt32(7),
-                        Imagen = dr.GetString(8)
+                        NombreCategoria = dr.GetString(4),
+                        FechaFabricacion = dr.IsDBNull(5) ? (DateTime?)null : dr.GetDateTime(5),
+                        FechaVencimiento = dr.IsDBNull(6) ? (DateTime?)null : dr.GetDateTime(6),
+                        Precio = dr.GetDecimal(7),
+                        Stock = dr.GetInt32(8),
+                        Imagen = dr.GetString(9)
                     };
                 }
                 dr.Close();
@@ -186,9 +187,6 @@ namespace Proyecto_Botica.Controllers
             return View(producto);
         }
 
-
-
-
         public async Task<IActionResult> EditProducto(int id)
         {
             var producto = await Task.Run(() => BuscarProductoPorId(id));
@@ -201,7 +199,6 @@ namespace Proyecto_Botica.Controllers
 
             return View(producto);
         }
-
 
         [HttpPost]
         public async Task<IActionResult> EditProducto(Producto producto, IFormFile imagen)
@@ -227,8 +224,6 @@ namespace Proyecto_Botica.Controllers
 
             return RedirectToAction("ListarProducto");
         }
-
-
 
         public async Task<IActionResult> EliminarProducto(int id)
         {
@@ -273,6 +268,19 @@ namespace Proyecto_Botica.Controllers
 
             TempData["Mensaje"] = mensaje;
             return RedirectToAction("ListarProducto");
+        }
+
+        public async Task<IActionResult> VerDetalleProducto(int id)
+        {
+            var producto = await Task.Run(() => BuscarProductoPorId(id));
+
+            if (producto == null)
+            {
+                TempData["Mensaje"] = "Producto no encontrado.";
+                return RedirectToAction("ListarProducto");
+            }
+
+            return View(producto);
         }
     }
 }

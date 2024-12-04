@@ -10,19 +10,18 @@
 <h1 class="titulo">Listar Producto</h1>
 
 <p>
-    <a asp-action="AgregarProducto" class="btn btn-danger">Registrar Producto</a>
+    <a asp-action="AgregarProducto" class="btn btn-primary">Registrar Producto</a>
 </p>
-<table class="table table-striped">
+<table class="table table-striped table-bordered">
     <thead class="table-dark">
         <tr>
-            <th>@Html.DisplayNameFor(model => model.IdProducto)</th>
-            <th>@Html.DisplayNameFor(model => model.Nombre)</th>
-            <th>@Html.DisplayNameFor(model => model.Descripcion)</th>
-            <th>@Html.DisplayNameFor(model => model.NombreCategoria)</th>
-            <th>@Html.DisplayNameFor(model => model.FechaFabricacion)</th>
-            <th>@Html.DisplayNameFor(model => model.FechaVencimiento)</th>
-            <th>@Html.DisplayNameFor(model => model.Precio)</th>
-            <th>@Html.DisplayNameFor(model => model.Stock)</th>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Categoría</th>
+            <th class="fecha">Fecha de Fabricación</th>
+            <th class="fecha">Fecha de Vencimiento</th>
+            <th>Precio</th>
+            <th>Stock</th>
             <th>Imagen</th>
             <th>Acciones</th>
         </tr>
@@ -33,11 +32,10 @@
             <tr>
                 <td>@Html.DisplayFor(modelItem => item.IdProducto)</td>
                 <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
-                <td>@Html.DisplayFor(modelItem => item.Descripcion)</td>
                 <td>@Html.DisplayFor(modelItem => item.NombreCategoria)</td>
-                <td>@Html.DisplayFor(modelItem => item.FechaFabricacion)</td>
-                <td>@Html.DisplayFor(modelItem => item.FechaVencimiento)</td>
-                <td>@Html.DisplayFor(modelItem => item.Precio)</td>
+                <td class="fecha">@Html.DisplayFor(modelItem => item.FechaFabricacion)</td>
+                <td class="fecha">@Html.DisplayFor(modelItem => item.FechaVencimiento)</td>
+                <td>S/. @Html.DisplayFor(modelItem => item.Precio)</td>
                 <td>@Html.DisplayFor(modelItem => item.Stock)</td>
                 <td>
                     @if (!string.IsNullOrEmpty(item.Imagen)) 
@@ -49,14 +47,22 @@
                         <span>Sin imagen</span>
                     }
                 </td>
-                <td>
-                    @Html.ActionLink("Editar", "EditProducto", new { id = item.IdProducto }, new { @class = "btn btn-info" })
-                    @Html.ActionLink("Eliminar", "EliminarProducto", new { id = item.IdProducto },
-                             new
-                             {
-                                 @class = "btn btn-danger",
-                                 onclick = "return confirm('¿Estás seguro de que deseas eliminar este producto?');"
-                             })
+                <td class="boton">
+                    <div class="botones">
+                        @Html.ActionLink("Editar", "EditProducto", new { id = item.IdProducto }, new { @class = "btn btn-success" })
+                    </div>
+                    <div class="botones">
+                        @Html.ActionLink("Ver Detalles", "VerDetalleProducto", new { id = item.IdProducto }, new { @class = "btn btn-info" })
+                    </div>
+                    <div class="botones">
+                        @Html.ActionLink("Eliminar", "EliminarProducto", new { id = item.IdProducto },
+                                 new
+                                 {
+                                     @class = "btn btn-danger",
+                                     onclick = "return confirm('¿Estás seguro de que deseas eliminar este producto?');"
+                                 })
+                    </div>
+
                 </td>
             </tr>
         }

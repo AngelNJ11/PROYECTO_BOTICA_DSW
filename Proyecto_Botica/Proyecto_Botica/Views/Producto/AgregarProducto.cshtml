@@ -14,13 +14,13 @@
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
     <div class="form-row">
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-4">
             <label asp-for="Nombre" class="control-label">Nombre</label>
             <input asp-for="Nombre" class="form-control" />
             <span asp-validation-for="Nombre" class="text-danger"></span>
         </div>
 
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-4">
             <label asp-for="Descripcion" class="control-label">Descripción</label>
             <input asp-for="Descripcion" class="form-control" />
             <span asp-validation-for="Descripcion" class="text-danger"></span>
@@ -28,7 +28,7 @@
     </div>
 
     <div class="form-row">
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-4">
             <label asp-for="idCategoria" class="control-label">Categoría</label>
             <select asp-for="idCategoria" class="form-control">
                 <option value="">Seleccione una categoría</option>
@@ -40,7 +40,7 @@
             <span asp-validation-for="idCategoria" class="text-danger"></span>
         </div>
 
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-4">
             <label asp-for="FechaFabricacion" class="control-label">Fecha de Fabricación</label>
             <input asp-for="FechaFabricacion" class="form-control" />
             <span asp-validation-for="FechaFabricacion" class="text-danger"></span>
@@ -48,13 +48,13 @@
     </div>
 
     <div class="form-row">
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-4">
             <label asp-for="FechaVencimiento" class="control-label">Fecha de Vencimiento</label>
             <input asp-for="FechaVencimiento" class="form-control" />
             <span asp-validation-for="FechaVencimiento" class="text-danger"></span>
         </div>
 
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-4">
             <label asp-for="Precio" class="control-label">Precio</label>
             <input asp-for="Precio" class="form-control" />
             <span asp-validation-for="Precio" class="text-danger"></span>
@@ -62,20 +62,19 @@
     </div>
 
     <div class="form-row">
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-4">
             <label asp-for="Stock" class="control-label">Stock</label>
             <input asp-for="Stock" class="form-control" />
             <span asp-validation-for="Stock" class="text-danger"></span>
         </div>
+        <div class="imagen">
+            <div class="form-group">
+                <label asp-for="Imagen"></label>
+                <input type="file" asp-for="Imagen" class="form-control" />
+                <span asp-validation-for="Imagen" class="text-danger"></span>
+            </div>
+        </div>
     </div>
-
-    <div class="form-group">
-        <label asp-for="Imagen"></label>
-        <input type="file" asp-for="Imagen" class="form-control" />
-        <span asp-validation-for="Imagen" class="text-danger"></span>
-    </div>
-
-   
 
     <div class="form-group d-flex ">
         <input type="submit" value="Agregar Producto" class="btn btn-primary" />
