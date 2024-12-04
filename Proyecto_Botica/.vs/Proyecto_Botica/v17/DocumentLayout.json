@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\jhon\\source\\repos\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|c:\\users\\jhon\\source\\repos\\proyecto_botica_dsw\\proyecto_botica\\proyecto_botica\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|solutionrelative:proyecto_botica\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|c:\\users\\jhon\\source\\repos\\proyecto_botica_dsw\\proyecto_botica\\proyecto_botica\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|solutionrelative:proyecto_botica\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|c:\\users\\jhon\\source\\repos\\proyecto_botica_dsw\\proyecto_botica\\proyecto_botica\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|solutionrelative:proyecto_botica\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|c:\\users\\jhon\\source\\repos\\proyecto_botica_dsw\\proyecto_botica\\proyecto_botica\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|solutionrelative:proyecto_botica\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|c:\\users\\jhon\\source\\repos\\proyecto_botica_dsw\\proyecto_botica\\proyecto_botica\\controllers\\cajerocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|solutionrelative:proyecto_botica\\controllers\\cajerocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|c:\\users\\jhon\\source\\repos\\proyecto_botica_dsw\\proyecto_botica\\proyecto_botica\\controllers\\administradorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|solutionrelative:proyecto_botica\\controllers\\administradorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +31,53 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\jhon\\source\\repos\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Views\\Login\\Index.cshtml",
-              "RelativeDocumentMoniker": "Proyecto_Botica\\Views\\Login\\Index.cshtml",
-              "ToolTip": "C:\\Users\\jhon\\source\\repos\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Views\\Login\\Index.cshtml",
-              "RelativeToolTip": "Proyecto_Botica\\Views\\Login\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-03T15:56:57.626Z",
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\jhon\\source\\repos\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Models\\Usuario.cs",
+              "RelativeDocumentMoniker": "Proyecto_Botica\\Models\\Usuario.cs",
+              "ToolTip": "C:\\Users\\jhon\\source\\repos\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Models\\Usuario.cs",
+              "RelativeToolTip": "Proyecto_Botica\\Models\\Usuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T02:32:11.27Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\jhon\\source\\repos\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Program.cs",
-              "RelativeDocumentMoniker": "Proyecto_Botica\\Program.cs",
-              "ToolTip": "C:\\Users\\jhon\\source\\repos\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Program.cs",
-              "RelativeToolTip": "Proyecto_Botica\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAaAAAAAAAAAA==",
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\Users\\jhon\\source\\repos\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "Proyecto_Botica\\Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Users\\jhon\\source\\repos\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "Proyecto_Botica\\Controllers\\LoginController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T15:56:43.812Z",
+              "WhenOpened": "2024-12-04T02:27:07.59Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CajeroController.cs",
+              "DocumentMoniker": "C:\\Users\\jhon\\source\\repos\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Controllers\\CajeroController.cs",
+              "RelativeDocumentMoniker": "Proyecto_Botica\\Controllers\\CajeroController.cs",
+              "ToolTip": "C:\\Users\\jhon\\source\\repos\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Controllers\\CajeroController.cs",
+              "RelativeToolTip": "Proyecto_Botica\\Controllers\\CajeroController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T02:27:06.933Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AdministradorController.cs",
+              "DocumentMoniker": "C:\\Users\\jhon\\source\\repos\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Controllers\\AdministradorController.cs",
+              "RelativeDocumentMoniker": "Proyecto_Botica\\Controllers\\AdministradorController.cs",
+              "ToolTip": "C:\\Users\\jhon\\source\\repos\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Controllers\\AdministradorController.cs",
+              "RelativeToolTip": "Proyecto_Botica\\Controllers\\AdministradorController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T02:27:04.31Z",
               "EditorCaption": ""
             }
           ]

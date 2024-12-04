@@ -12,8 +12,10 @@ namespace Proyecto_Botica.Models
         public string? Descripcion { get; set; }
 
         public string? NombreCategoria { get; set; }
+
         [DataType(DataType.Date)]
         public DateTime? FechaFabricacion { get; set; }
+
         [DataType(DataType.Date)]
         public DateTime? FechaVencimiento { get; set; }
 
