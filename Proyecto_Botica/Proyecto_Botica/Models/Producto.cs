@@ -22,5 +22,7 @@ namespace Proyecto_Botica.Models
         public int Stock { get; set; }
 
         public int? idCategoria { get; set; }
+
+        public string? Imagen { get; set; } 
     }
 }

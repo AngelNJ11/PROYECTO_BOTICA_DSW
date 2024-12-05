@@ -3,24 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Asus\\OneDrive\\Escritorio\\Git-Hub\\Git_cibertec\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|c:\\users\\asus\\onedrive\\escritorio\\git-hub\\git_cibertec\\proyecto_botica_dsw\\proyecto_botica\\proyecto_botica\\views\\proveedor\\editproveedor.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|solutionrelative:proyecto_botica\\views\\proveedor\\editproveedor.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|c:\\users\\asus\\onedrive\\escritorio\\git-hub\\git_cibertec\\proyecto_botica_dsw\\proyecto_botica\\proyecto_botica\\wwwroot\\css\\producto\\listarproducto.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|solutionrelative:proyecto_botica\\wwwroot\\css\\producto\\listarproducto.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|c:\\users\\asus\\onedrive\\escritorio\\git-hub\\git_cibertec\\proyecto_botica_dsw\\proyecto_botica\\proyecto_botica\\controllers\\proveedorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|solutionrelative:proyecto_botica\\controllers\\proveedorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|c:\\users\\asus\\onedrive\\escritorio\\git-hub\\git_cibertec\\proyecto_botica_dsw\\proyecto_botica\\proyecto_botica\\wwwroot\\css\\producto\\detalleproducto.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|solutionrelative:proyecto_botica\\wwwroot\\css\\producto\\detalleproducto.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|c:\\users\\asus\\onedrive\\escritorio\\git-hub\\git_cibertec\\proyecto_botica_dsw\\proyecto_botica\\proyecto_botica\\views\\proveedor\\listarproveedor.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|solutionrelative:proyecto_botica\\views\\proveedor\\listarproveedor.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|c:\\users\\asus\\onedrive\\escritorio\\git-hub\\git_cibertec\\proyecto_botica_dsw\\proyecto_botica\\proyecto_botica\\views\\proveedor\\agregarproveedor.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|solutionrelative:proyecto_botica\\views\\proveedor\\agregarproveedor.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|c:\\users\\asus\\onedrive\\escritorio\\git-hub\\git_cibertec\\proyecto_botica_dsw\\proyecto_botica\\proyecto_botica\\models\\proveedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|solutionrelative:proyecto_botica\\models\\proveedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|c:\\users\\asus\\onedrive\\escritorio\\git-hub\\git_cibertec\\proyecto_botica_dsw\\proyecto_botica\\proyecto_botica\\views\\producto\\verdetalleproducto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|solutionrelative:proyecto_botica\\views\\producto\\verdetalleproducto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,75 +22,53 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "EditProveedor.cshtml",
-              "DocumentMoniker": "C:\\Users\\Asus\\OneDrive\\Escritorio\\Git-Hub\\Git_cibertec\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Views\\Proveedor\\EditProveedor.cshtml",
-              "RelativeDocumentMoniker": "Proyecto_Botica\\Views\\Proveedor\\EditProveedor.cshtml",
-              "ToolTip": "C:\\Users\\Asus\\OneDrive\\Escritorio\\Git-Hub\\Git_cibertec\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Views\\Proveedor\\EditProveedor.cshtml",
-              "RelativeToolTip": "Proyecto_Botica\\Views\\Proveedor\\EditProveedor.cshtml",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAwwCgAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-30T23:37:41.643Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AgregarProveedor.cshtml",
-              "DocumentMoniker": "C:\\Users\\Asus\\OneDrive\\Escritorio\\Git-Hub\\Git_cibertec\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Views\\Proveedor\\AgregarProveedor.cshtml",
-              "RelativeDocumentMoniker": "Proyecto_Botica\\Views\\Proveedor\\AgregarProveedor.cshtml",
-              "ToolTip": "C:\\Users\\Asus\\OneDrive\\Escritorio\\Git-Hub\\Git_cibertec\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Views\\Proveedor\\AgregarProveedor.cshtml",
-              "RelativeToolTip": "Proyecto_Botica\\Views\\Proveedor\\AgregarProveedor.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-30T23:35:46.054Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ListarProveedor.cshtml",
-              "DocumentMoniker": "C:\\Users\\Asus\\OneDrive\\Escritorio\\Git-Hub\\Git_cibertec\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Views\\Proveedor\\ListarProveedor.cshtml",
-              "RelativeDocumentMoniker": "Proyecto_Botica\\Views\\Proveedor\\ListarProveedor.cshtml",
-              "ToolTip": "C:\\Users\\Asus\\OneDrive\\Escritorio\\Git-Hub\\Git_cibertec\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Views\\Proveedor\\ListarProveedor.cshtml",
-              "RelativeToolTip": "Proyecto_Botica\\Views\\Proveedor\\ListarProveedor.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-30T23:33:44.904Z",
+              "Title": "listarproducto.css",
+              "DocumentMoniker": "C:\\Users\\Asus\\OneDrive\\Escritorio\\Git-Hub\\Git_cibertec\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\wwwroot\\css\\Producto\\listarproducto.css",
+              "RelativeDocumentMoniker": "Proyecto_Botica\\wwwroot\\css\\Producto\\listarproducto.css",
+              "ToolTip": "C:\\Users\\Asus\\OneDrive\\Escritorio\\Git-Hub\\Git_cibertec\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\wwwroot\\css\\Producto\\listarproducto.css",
+              "RelativeToolTip": "Proyecto_Botica\\wwwroot\\css\\Producto\\listarproducto.css",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-12-04T19:55:16.181Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ProveedorController.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\OneDrive\\Escritorio\\Git-Hub\\Git_cibertec\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Controllers\\ProveedorController.cs",
-              "RelativeDocumentMoniker": "Proyecto_Botica\\Controllers\\ProveedorController.cs",
-              "ToolTip": "C:\\Users\\Asus\\OneDrive\\Escritorio\\Git-Hub\\Git_cibertec\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Controllers\\ProveedorController.cs",
-              "RelativeToolTip": "Proyecto_Botica\\Controllers\\ProveedorController.cs",
-              "ViewState": "AgIAAHQAAAAAAAAAAAAswIIAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-30T23:27:08.392Z",
+              "Title": "detalleProducto.css",
+              "DocumentMoniker": "C:\\Users\\Asus\\OneDrive\\Escritorio\\Git-Hub\\Git_cibertec\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\wwwroot\\css\\Producto\\detalleProducto.css",
+              "RelativeDocumentMoniker": "Proyecto_Botica\\wwwroot\\css\\Producto\\detalleProducto.css",
+              "ToolTip": "C:\\Users\\Asus\\OneDrive\\Escritorio\\Git-Hub\\Git_cibertec\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\wwwroot\\css\\Producto\\detalleProducto.css",
+              "RelativeToolTip": "Proyecto_Botica\\wwwroot\\css\\Producto\\detalleProducto.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-12-04T19:53:53.568Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Proveedor.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\OneDrive\\Escritorio\\Git-Hub\\Git_cibertec\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Models\\Proveedor.cs",
-              "RelativeDocumentMoniker": "Proyecto_Botica\\Models\\Proveedor.cs",
-              "ToolTip": "C:\\Users\\Asus\\OneDrive\\Escritorio\\Git-Hub\\Git_cibertec\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Models\\Proveedor.cs",
-              "RelativeToolTip": "Proyecto_Botica\\Models\\Proveedor.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAA1wBAAAABMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-30T23:24:33.51Z",
+              "DocumentIndex": 2,
+              "Title": "VerDetalleProducto.cshtml",
+              "DocumentMoniker": "C:\\Users\\Asus\\OneDrive\\Escritorio\\Git-Hub\\Git_cibertec\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Views\\Producto\\VerDetalleProducto.cshtml",
+              "RelativeDocumentMoniker": "Proyecto_Botica\\Views\\Producto\\VerDetalleProducto.cshtml",
+              "ToolTip": "C:\\Users\\Asus\\OneDrive\\Escritorio\\Git-Hub\\Git_cibertec\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Views\\Producto\\VerDetalleProducto.cshtml",
+              "RelativeToolTip": "Proyecto_Botica\\Views\\Producto\\VerDetalleProducto.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-04T19:35:50.136Z",
               "EditorCaption": ""
             }
           ]

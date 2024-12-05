@@ -9,6 +9,14 @@
       "PackagePath": "staticwebassets\\css\\Producto\\agregarproducto.css"
     },
     {
+      "Id": "C:\\Users\\Asus\\OneDrive\\Escritorio\\Git-Hub\\Git_cibertec\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\wwwroot\\css\\Producto\\detalleProducto.css",
+      "PackagePath": "staticwebassets\\css\\Producto\\detalleProducto.css"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\OneDrive\\Escritorio\\Git-Hub\\Git_cibertec\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\wwwroot\\css\\Producto\\editarproducto.css",
+      "PackagePath": "staticwebassets\\css\\Producto\\editarproducto.css"
+    },
+    {
       "Id": "C:\\Users\\Asus\\OneDrive\\Escritorio\\Git-Hub\\Git_cibertec\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\wwwroot\\css\\Producto\\listarproducto.css",
       "PackagePath": "staticwebassets\\css\\Producto\\listarproducto.css"
     },
@@ -35,6 +43,18 @@
     {
       "Id": "C:\\Users\\Asus\\OneDrive\\Escritorio\\Git-Hub\\Git_cibertec\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\wwwroot\\img\\icon-google.svg",
       "PackagePath": "staticwebassets\\img\\icon-google.svg"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\OneDrive\\Escritorio\\Git-Hub\\Git_cibertec\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\wwwroot\\img\\productos\\cocacola.jpg",
+      "PackagePath": "staticwebassets\\img\\productos\\cocacola.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\OneDrive\\Escritorio\\Git-Hub\\Git_cibertec\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\wwwroot\\img\\productos\\default_sin_imagen.png",
+      "PackagePath": "staticwebassets\\img\\productos\\default_sin_imagen.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\OneDrive\\Escritorio\\Git-Hub\\Git_cibertec\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\wwwroot\\img\\productos\\panadol.jpg",
+      "PackagePath": "staticwebassets\\img\\productos\\panadol.jpg"
     },
     {
       "Id": "C:\\Users\\Asus\\OneDrive\\Escritorio\\Git-Hub\\Git_cibertec\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\wwwroot\\js\\main.js",
