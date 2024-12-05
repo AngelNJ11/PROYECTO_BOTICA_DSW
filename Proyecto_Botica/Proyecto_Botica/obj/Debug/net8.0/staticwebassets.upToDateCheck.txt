@@ -6,6 +6,7 @@ wwwroot\favicon.ico
 wwwroot\img\icon-apple.svg
 wwwroot\img\icon-facebook.svg
 wwwroot\img\icon-google.svg
+wwwroot\img\icon-logo.jpg
 wwwroot\js\main.js
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css

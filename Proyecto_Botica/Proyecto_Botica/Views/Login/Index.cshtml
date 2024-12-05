@@ -4,10 +4,12 @@
 
 <h1 class="login__title">Login</h1>
 <div class="login__area">
+    <br />
     @if (ViewBag.Error != null)
     {
         <div class="alert alert-danger">@ViewBag.Error</div>
     }
+    <br />
     <form asp-action="Login" method="post" class="login__form">
         <div class="login__content grid">
             <div class="login__box">

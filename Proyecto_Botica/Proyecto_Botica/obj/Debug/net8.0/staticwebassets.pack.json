@@ -37,6 +37,10 @@
       "PackagePath": "staticwebassets\\img\\icon-google.svg"
     },
     {
+      "Id": "C:\\Users\\jhon\\source\\repos\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\wwwroot\\img\\icon-logo.jpg",
+      "PackagePath": "staticwebassets\\img\\icon-logo.jpg"
+    },
+    {
       "Id": "C:\\Users\\jhon\\source\\repos\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\wwwroot\\js\\main.js",
       "PackagePath": "staticwebassets\\js\\main.js"
     },

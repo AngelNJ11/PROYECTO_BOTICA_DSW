@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "l1iuZZwCCFS1GN7kPaxVLwmNXDbspucXnsnOnWkGqQI=",
+  "Hash": "V+jEFwMYPTS1arvD7OqBYCGGoJYuVypvqBqzRJU1geI=",
   "Source": "Proyecto_Botica",
   "BasePath": "_content/Proyecto_Botica",
   "Mode": "Default",
@@ -225,6 +225,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\icon-google.svg"
+    },
+    {
+      "Identity": "C:\\Users\\jhon\\source\\repos\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\wwwroot\\img\\icon-logo.jpg",
+      "SourceId": "Proyecto_Botica",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jhon\\source\\repos\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\wwwroot\\",
+      "BasePath": "_content/Proyecto_Botica",
+      "RelativePath": "img/icon-logo#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "y3vt317kyo",
+      "Integrity": "vjk1dtt9bPkcwE6bg+pTIpUVlsZh46J/tFDcUTE4NBg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\icon-logo.jpg"
     },
     {
       "Identity": "C:\\Users\\jhon\\source\\repos\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\wwwroot\\js\\main.js",
@@ -2120,6 +2141,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-ZIsuGlmU/OIcLDP/QCC/0UBkmqIbQEvOaZ0pF4FDRPM="
+        }
+      ]
+    },
+    {
+      "Route": "img/icon-logo.jpg",
+      "AssetFile": "C:\\Users\\jhon\\source\\repos\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\wwwroot\\img\\icon-logo.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "36751"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vjk1dtt9bPkcwE6bg+pTIpUVlsZh46J/tFDcUTE4NBg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 05 Dec 2024 02:52:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-vjk1dtt9bPkcwE6bg+pTIpUVlsZh46J/tFDcUTE4NBg="
+        }
+      ]
+    },
+    {
+      "Route": "img/icon-logo.y3vt317kyo.jpg",
+      "AssetFile": "C:\\Users\\jhon\\source\\repos\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\wwwroot\\img\\icon-logo.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "36751"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vjk1dtt9bPkcwE6bg+pTIpUVlsZh46J/tFDcUTE4NBg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 05 Dec 2024 02:52:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "y3vt317kyo"
+        },
+        {
+          "Name": "label",
+          "Value": "img/icon-logo.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-vjk1dtt9bPkcwE6bg+pTIpUVlsZh46J/tFDcUTE4NBg="
         }
       ]
     },
@@ -6984,7 +7087,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 03 Dec 2024 15:31:48 GMT"
+          "Value": "Thu, 05 Dec 2024 14:45:02 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7021,7 +7124,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 03 Dec 2024 15:31:48 GMT"
+          "Value": "Thu, 05 Dec 2024 14:45:02 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7066,7 +7169,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 03 Dec 2024 15:31:48 GMT"
+          "Value": "Thu, 05 Dec 2024 14:45:02 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7111,7 +7214,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 03 Dec 2024 15:31:48 GMT"
+          "Value": "Thu, 05 Dec 2024 14:45:02 GMT"
         },
         {
           "Name": "Cache-Control",
