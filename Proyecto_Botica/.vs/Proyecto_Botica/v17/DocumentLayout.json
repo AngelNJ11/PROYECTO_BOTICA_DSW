@@ -1,26 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Asus\\OneDrive\\Escritorio\\Git-Hub\\Git_cibertec\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\",
+  "WorkspaceRootPath": "C:\\Users\\lenni\\Documents\\Lennin\\Cibertec\\ciclo_v\\desarrollo-servicios-web-I\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|c:\\users\\asus\\onedrive\\escritorio\\git-hub\\git_cibertec\\proyecto_botica_dsw\\proyecto_botica\\proyecto_botica\\wwwroot\\css\\producto\\agregarproducto.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|solutionrelative:proyecto_botica\\wwwroot\\css\\producto\\agregarproducto.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|c:\\users\\lenni\\documents\\lennin\\cibertec\\ciclo_v\\desarrollo-servicios-web-i\\proyecto_botica_dsw\\proyecto_botica\\proyecto_botica\\views\\venta\\listarproductosventa.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|solutionrelative:proyecto_botica\\views\\venta\\listarproductosventa.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|c:\\users\\asus\\onedrive\\escritorio\\git-hub\\git_cibertec\\proyecto_botica_dsw\\proyecto_botica\\proyecto_botica\\views\\producto\\verdetalleproducto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|solutionrelative:proyecto_botica\\views\\producto\\verdetalleproducto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|c:\\users\\lenni\\documents\\lennin\\cibertec\\ciclo_v\\desarrollo-servicios-web-i\\proyecto_botica_dsw\\proyecto_botica\\proyecto_botica\\controllers\\ventacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|solutionrelative:proyecto_botica\\controllers\\ventacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|c:\\users\\asus\\onedrive\\escritorio\\git-hub\\git_cibertec\\proyecto_botica_dsw\\proyecto_botica\\proyecto_botica\\wwwroot\\css\\producto\\detalleproducto.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|solutionrelative:proyecto_botica\\wwwroot\\css\\producto\\detalleproducto.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|c:\\users\\lenni\\documents\\lennin\\cibertec\\ciclo_v\\desarrollo-servicios-web-i\\proyecto_botica_dsw\\proyecto_botica\\proyecto_botica\\repositorio\\repositoriosql\\ventasql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|solutionrelative:proyecto_botica\\repositorio\\repositoriosql\\ventasql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|c:\\users\\asus\\onedrive\\escritorio\\git-hub\\git_cibertec\\proyecto_botica_dsw\\proyecto_botica\\proyecto_botica\\wwwroot\\css\\producto\\listarproducto.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|solutionrelative:proyecto_botica\\wwwroot\\css\\producto\\listarproducto.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|c:\\users\\asus\\onedrive\\escritorio\\git-hub\\git_cibertec\\proyecto_botica_dsw\\proyecto_botica\\proyecto_botica\\wwwroot\\css\\producto\\editarproducto.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|solutionrelative:proyecto_botica\\wwwroot\\css\\producto\\editarproducto.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|c:\\users\\lenni\\documents\\lennin\\cibertec\\ciclo_v\\desarrollo-servicios-web-i\\proyecto_botica_dsw\\proyecto_botica\\proyecto_botica\\repositorio\\repositoriosql\\detventasql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|solutionrelative:proyecto_botica\\repositorio\\repositoriosql\\detventasql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,79 +26,78 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 7,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "agregarproducto.css",
-              "DocumentMoniker": "C:\\Users\\Asus\\OneDrive\\Escritorio\\Git-Hub\\Git_cibertec\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\wwwroot\\css\\Producto\\agregarproducto.css",
-              "RelativeDocumentMoniker": "Proyecto_Botica\\wwwroot\\css\\Producto\\agregarproducto.css",
-              "ToolTip": "C:\\Users\\Asus\\OneDrive\\Escritorio\\Git-Hub\\Git_cibertec\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\wwwroot\\css\\Producto\\agregarproducto.css",
-              "RelativeToolTip": "Proyecto_Botica\\wwwroot\\css\\Producto\\agregarproducto.css",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAA0AAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-12-04T20:14:51.456Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "editarproducto.css",
-              "DocumentMoniker": "C:\\Users\\Asus\\OneDrive\\Escritorio\\Git-Hub\\Git_cibertec\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\wwwroot\\css\\Producto\\editarproducto.css",
-              "RelativeDocumentMoniker": "Proyecto_Botica\\wwwroot\\css\\Producto\\editarproducto.css",
-              "ToolTip": "C:\\Users\\Asus\\OneDrive\\Escritorio\\Git-Hub\\Git_cibertec\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\wwwroot\\css\\Producto\\editarproducto.css",
-              "RelativeToolTip": "Proyecto_Botica\\wwwroot\\css\\Producto\\editarproducto.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-12-04T20:08:48.375Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "listarproducto.css",
-              "DocumentMoniker": "C:\\Users\\Asus\\OneDrive\\Escritorio\\Git-Hub\\Git_cibertec\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\wwwroot\\css\\Producto\\listarproducto.css",
-              "RelativeDocumentMoniker": "Proyecto_Botica\\wwwroot\\css\\Producto\\listarproducto.css",
-              "ToolTip": "C:\\Users\\Asus\\OneDrive\\Escritorio\\Git-Hub\\Git_cibertec\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\wwwroot\\css\\Producto\\listarproducto.css",
-              "RelativeToolTip": "Proyecto_Botica\\wwwroot\\css\\Producto\\listarproducto.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-12-04T19:55:16.181Z",
+              "Title": "detVentaSQL.cs",
+              "DocumentMoniker": "C:\\Users\\lenni\\Documents\\Lennin\\Cibertec\\ciclo_v\\desarrollo-servicios-web-I\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Repositorio\\RepositorioSQL\\detVentaSQL.cs",
+              "RelativeDocumentMoniker": "Proyecto_Botica\\Repositorio\\RepositorioSQL\\detVentaSQL.cs",
+              "ToolTip": "C:\\Users\\lenni\\Documents\\Lennin\\Cibertec\\ciclo_v\\desarrollo-servicios-web-I\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Repositorio\\RepositorioSQL\\detVentaSQL.cs",
+              "RelativeToolTip": "Proyecto_Botica\\Repositorio\\RepositorioSQL\\detVentaSQL.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T05:01:44.294Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "detalleProducto.css",
-              "DocumentMoniker": "C:\\Users\\Asus\\OneDrive\\Escritorio\\Git-Hub\\Git_cibertec\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\wwwroot\\css\\Producto\\detalleProducto.css",
-              "RelativeDocumentMoniker": "Proyecto_Botica\\wwwroot\\css\\Producto\\detalleProducto.css",
-              "ToolTip": "C:\\Users\\Asus\\OneDrive\\Escritorio\\Git-Hub\\Git_cibertec\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\wwwroot\\css\\Producto\\detalleProducto.css",
-              "RelativeToolTip": "Proyecto_Botica\\wwwroot\\css\\Producto\\detalleProducto.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-12-04T19:53:53.568Z",
+              "Title": "ventaSQL.cs",
+              "DocumentMoniker": "C:\\Users\\lenni\\Documents\\Lennin\\Cibertec\\ciclo_v\\desarrollo-servicios-web-I\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Repositorio\\RepositorioSQL\\ventaSQL.cs",
+              "RelativeDocumentMoniker": "Proyecto_Botica\\Repositorio\\RepositorioSQL\\ventaSQL.cs",
+              "ToolTip": "C:\\Users\\lenni\\Documents\\Lennin\\Cibertec\\ciclo_v\\desarrollo-servicios-web-I\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Repositorio\\RepositorioSQL\\ventaSQL.cs",
+              "RelativeToolTip": "Proyecto_Botica\\Repositorio\\RepositorioSQL\\ventaSQL.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAYwBwAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T04:17:20.052Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ListarProductosVenta.cshtml",
+              "DocumentMoniker": "C:\\Users\\lenni\\Documents\\Lennin\\Cibertec\\ciclo_v\\desarrollo-servicios-web-I\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Views\\Venta\\ListarProductosVenta.cshtml",
+              "RelativeDocumentMoniker": "Proyecto_Botica\\Views\\Venta\\ListarProductosVenta.cshtml",
+              "ToolTip": "C:\\Users\\lenni\\Documents\\Lennin\\Cibertec\\ciclo_v\\desarrollo-servicios-web-I\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Views\\Venta\\ListarProductosVenta.cshtml",
+              "RelativeToolTip": "Proyecto_Botica\\Views\\Venta\\ListarProductosVenta.cshtml",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAE4AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-05T07:27:34.552Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "VerDetalleProducto.cshtml",
-              "DocumentMoniker": "C:\\Users\\Asus\\OneDrive\\Escritorio\\Git-Hub\\Git_cibertec\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Views\\Producto\\VerDetalleProducto.cshtml",
-              "RelativeDocumentMoniker": "Proyecto_Botica\\Views\\Producto\\VerDetalleProducto.cshtml",
-              "ToolTip": "C:\\Users\\Asus\\OneDrive\\Escritorio\\Git-Hub\\Git_cibertec\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Views\\Producto\\VerDetalleProducto.cshtml",
-              "RelativeToolTip": "Proyecto_Botica\\Views\\Producto\\VerDetalleProducto.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-04T19:35:50.136Z",
+              "Title": "VentaController.cs",
+              "DocumentMoniker": "C:\\Users\\lenni\\Documents\\Lennin\\Cibertec\\ciclo_v\\desarrollo-servicios-web-I\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Controllers\\VentaController.cs",
+              "RelativeDocumentMoniker": "Proyecto_Botica\\Controllers\\VentaController.cs",
+              "ToolTip": "C:\\Users\\lenni\\Documents\\Lennin\\Cibertec\\ciclo_v\\desarrollo-servicios-web-I\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Controllers\\VentaController.cs",
+              "RelativeToolTip": "Proyecto_Botica\\Controllers\\VentaController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAAAB4AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T07:19:48.236Z",
               "EditorCaption": ""
             }
           ]
