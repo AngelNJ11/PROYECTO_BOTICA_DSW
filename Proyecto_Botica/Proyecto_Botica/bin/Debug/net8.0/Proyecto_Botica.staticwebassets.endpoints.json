@@ -29,7 +29,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 05 Dec 2024 14:45:02 GMT"
+          "Value": "Thu, 05 Dec 2024 20:14:22 GMT"
         }
       ],
       "EndpointProperties": [
@@ -74,7 +74,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 05 Dec 2024 14:45:02 GMT"
+          "Value": "Thu, 05 Dec 2024 20:14:22 GMT"
         }
       ],
       "EndpointProperties": [
@@ -755,7 +755,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "36751"
+          "Value": "26068"
         },
         {
           "Name": "Content-Type",
@@ -763,22 +763,22 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"vjk1dtt9bPkcwE6bg+pTIpUVlsZh46J/tFDcUTE4NBg=\""
+          "Value": "\"2DarMB0BkByrbIFLECk1Tf/AihLDOsuDEmForZ7cpig=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 05 Dec 2024 02:52:57 GMT"
+          "Value": "Thu, 05 Dec 2024 20:17:01 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-vjk1dtt9bPkcwE6bg+pTIpUVlsZh46J/tFDcUTE4NBg="
+          "Value": "sha256-2DarMB0BkByrbIFLECk1Tf/AihLDOsuDEmForZ7cpig="
         }
       ]
     },
     {
-      "Route": "img/icon-logo.y3vt317kyo.jpg",
+      "Route": "img/icon-logo.oobk1wnj37.jpg",
       "AssetFile": "img/icon-logo.jpg",
       "Selectors": [],
       "ResponseHeaders": [
@@ -792,7 +792,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "36751"
+          "Value": "26068"
         },
         {
           "Name": "Content-Type",
@@ -800,21 +800,21 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"vjk1dtt9bPkcwE6bg+pTIpUVlsZh46J/tFDcUTE4NBg=\""
+          "Value": "\"2DarMB0BkByrbIFLECk1Tf/AihLDOsuDEmForZ7cpig=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 05 Dec 2024 02:52:57 GMT"
+          "Value": "Thu, 05 Dec 2024 20:17:01 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "y3vt317kyo"
+          "Value": "oobk1wnj37"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-vjk1dtt9bPkcwE6bg+pTIpUVlsZh46J/tFDcUTE4NBg="
+          "Value": "sha256-2DarMB0BkByrbIFLECk1Tf/AihLDOsuDEmForZ7cpig="
         },
         {
           "Name": "label",

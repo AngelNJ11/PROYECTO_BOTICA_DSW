@@ -4,9 +4,16 @@ builder.Services.AddSession();
 
 builder.Services.AddControllersWithViews();
 
-var app = builder.Build();
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30); // Configura el tiempo de vida de la sesión
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
 
-app.UseSession();
+var app = builder.Build();
+app.UseSession(); // Asegúrate de que este middleware esté configurado
 
 if (!app.Environment.IsDevelopment())
 {

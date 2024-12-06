@@ -27,10 +27,10 @@ namespace Proyecto_Botica.Controllers
 
             if (usuario != null)
             {
+                HttpContext.Session.SetString("UsuarioNombre", usuario.Nombre);
+                HttpContext.Session.SetString("UsuarioApellido", usuario.ApellidoPat);
                 if (usuario.Rol == "Administrador")
                 {
-                    TempData["UsuarioNombre"] = usuario.Nombre;
-                    TempData["UsuarioApellido"] = usuario.ApellidoPat;
                     return RedirectToAction("Index", "Administrador");
                 }
                 else if (usuario.Rol == "Cajero")

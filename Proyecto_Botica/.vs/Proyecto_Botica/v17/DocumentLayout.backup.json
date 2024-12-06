@@ -1,12 +1,37 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\jhon\\source\\repos\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|c:\\users\\jhon\\source\\repos\\proyecto_botica_dsw\\proyecto_botica\\proyecto_botica\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|solutionrelative:proyecto_botica\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\jhon\\source\\repos\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Proyecto_Botica\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\jhon\\source\\repos\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Proyecto_Botica\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-06T06:21:30.094Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
