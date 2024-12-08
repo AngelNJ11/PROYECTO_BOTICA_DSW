@@ -1,0 +1,98 @@
+﻿@model Proyecto_Botica.Models.Producto
+
+@{
+    ViewData["Title"] = "EditProducto";
+    Layout = null;
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link href="~/css/producto/editarproducto.css" rel="stylesheet" />
+}
+
+<head>
+    <h1>Editar Producto</h1>
+</head>
+<body>
+    <form asp-action="EditProducto" enctype="multipart/form-data" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label asp-for="IdProducto" class="control-label">ID Producto</label>
+                <input asp-for="IdProducto" class="form-control" disabled="disabled" />
+                <input type="hidden" asp-for="IdProducto" />
+                <span asp-validation-for="IdProducto" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-4">
+                <label asp-for="Nombre" class="control-label">Nombre</label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label asp-for="Descripcion" class="control-label">Descripción</label>
+                <input asp-for="Descripcion" class="form-control" />
+                <span asp-validation-for="Descripcion" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-4">
+                <label asp-for="idCategoria" class="control-label">Categoría</label>
+                <select asp-for="idCategoria" asp-items="@ViewBag.Categorias" class="form-control">
+                    <option value="">Seleccione una categoría</option>
+                </select>
+                <span asp-validation-for="idCategoria" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label asp-for="FechaFabricacion" class="control-label">Fecha de Fabricación</label>
+                <input asp-for="FechaFabricacion" class="form-control" />
+                <span asp-validation-for="FechaFabricacion" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-4">
+                <label asp-for="FechaVencimiento" class="control-label">Fecha de Vencimiento</label>
+                <input asp-for="FechaVencimiento" class="form-control" />
+                <span asp-validation-for="FechaVencimiento" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label asp-for="Precio" class="control-label">Precio</label>
+                <input asp-for="Precio" class="form-control" />
+                <span asp-validation-for="Precio" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-4">
+                <label asp-for="Stock" class="control-label">Stock</label>
+                <input asp-for="Stock" class="form-control" />
+                <span asp-validation-for="Stock" class="text-danger"></span>
+            </div>
+        </div>
+        <div class=" imagen">
+            <div class="form-group col-md-4">
+                <label asp-for="Imagen" class="control-label"></label>
+                <input type="file" asp-for="Imagen" class="form-control file-input" />
+                <span asp-validation-for="Imagen" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group d-flex">
+            <input type="submit" value="Guardar" class="btn btn-primary" />
+            <a asp-action="ListarProducto" class="btn btn-success">Volver a la Lista</a>
+        </div>
+    </form>
+
+
+</body>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+
