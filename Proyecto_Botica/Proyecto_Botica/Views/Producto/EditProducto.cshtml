@@ -1,6 +1,7 @@
 ﻿@model Proyecto_Botica.Models.Producto
 
 @{
+    Layout = "~/Views/Shared/_Layout.cshtml";
     ViewData["Title"] = "EditProducto";
     Layout = null;
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
@@ -13,6 +14,12 @@
 <body>
     <form asp-action="EditProducto" enctype="multipart/form-data" method="post">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+}
+
+<br>
+
+<h1>Editar Producto</h1>
 
         <div class="form-row">
             <div class="form-group col-md-4">
@@ -85,6 +92,14 @@
             <a asp-action="ListarProducto" class="btn btn-success">Volver a la Lista</a>
         </div>
     </form>
+
+    <br />
+
+    <div class="form-group d-flex">
+        <input type="submit" value="Guardar" class="btn btn-primary" />
+        <a asp-action="ListarProducto" class="btn btn-success">Volver a la Lista</a>
+    </div>
+
 
 
 </body>

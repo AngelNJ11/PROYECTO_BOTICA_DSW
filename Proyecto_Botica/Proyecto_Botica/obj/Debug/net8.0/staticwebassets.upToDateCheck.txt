@@ -1,19 +1,26 @@
 wwwroot\css\login.css
 wwwroot\css\Producto\agregarproducto.css
+<<<<<<< HEAD
 wwwroot\css\Producto\detalleProducto.css
 wwwroot\css\Producto\editarproducto.css
+=======
+>>>>>>> origin/jhon
 wwwroot\css\Producto\listarproducto.css
 wwwroot\css\site.css
 wwwroot\favicon.ico
 wwwroot\img\icon-apple.svg
 wwwroot\img\icon-facebook.svg
 wwwroot\img\icon-google.svg
+<<<<<<< HEAD
 wwwroot\img\productos\cocacola.jpg
 wwwroot\img\productos\default_sin_imagen.png
 wwwroot\img\productos\palmolive.png
 wwwroot\img\productos\panadol.jpg
 wwwroot\img\productos\pantene.png
 wwwroot\img\productos\paracetamol.png
+=======
+wwwroot\img\icon-logo.jpg
+>>>>>>> origin/jhon
 wwwroot\js\main.js
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css

@@ -1,1 +1,16 @@
+# Archivos de Visual Studio
 .vs/
+*.user
+*.suo
+
+# Archivos binarios y de compilacion
+bin/
+obj/
+
+# Configuracion generada automaticamente
+*.dll
+*.exe
+*.pdb
+*.cache
+*.log
+*.json

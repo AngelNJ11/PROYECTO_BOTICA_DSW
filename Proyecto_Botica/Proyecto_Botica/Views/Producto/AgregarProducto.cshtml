@@ -1,11 +1,11 @@
 ﻿@model Proyecto_Botica.Models.Producto
 
 @{
+    Layout = "~/Views/Shared/_Layout.cshtml";
     ViewData["Title"] = "AgregarProducto";
-    Layout = null;
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-    <link href="~/css/Producto/agregarproducto.css" rel="stylesheet" />
 }
+
+<br>
 
 <h1>Agregar Producto</h1>
 
@@ -75,6 +75,8 @@
             </div>
         </div>
     </div>
+
+    <br />
 
     <div class="form-group d-flex ">
         <input type="submit" value="Agregar Producto" class="btn btn-primary" />
