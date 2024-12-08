@@ -1,24 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\lenni\\Documents\\Lennin\\Cibertec\\ciclo_v\\desarrollo-servicios-web-I\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|c:\\users\\lenni\\documents\\lennin\\cibertec\\ciclo_v\\desarrollo-servicios-web-i\\proyecto_botica_dsw\\proyecto_botica\\proyecto_botica\\views\\venta\\listarproductosventa.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|solutionrelative:proyecto_botica\\views\\venta\\listarproductosventa.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|c:\\users\\lenni\\documents\\lennin\\cibertec\\ciclo_v\\desarrollo-servicios-web-i\\proyecto_botica_dsw\\proyecto_botica\\proyecto_botica\\controllers\\ventacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|solutionrelative:proyecto_botica\\controllers\\ventacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|c:\\users\\lenni\\documents\\lennin\\cibertec\\ciclo_v\\desarrollo-servicios-web-i\\proyecto_botica_dsw\\proyecto_botica\\proyecto_botica\\repositorio\\repositoriosql\\ventasql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|solutionrelative:proyecto_botica\\repositorio\\repositoriosql\\ventasql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|c:\\users\\lenni\\documents\\lennin\\cibertec\\ciclo_v\\desarrollo-servicios-web-i\\proyecto_botica_dsw\\proyecto_botica\\proyecto_botica\\repositorio\\repositoriosql\\detventasql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B7F6B425-A71B-4C4A-9242-DE17416DD2C7}|Proyecto_Botica\\Proyecto_Botica.csproj|solutionrelative:proyecto_botica\\repositorio\\repositoriosql\\detventasql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -26,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -47,58 +30,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "detVentaSQL.cs",
-              "DocumentMoniker": "C:\\Users\\lenni\\Documents\\Lennin\\Cibertec\\ciclo_v\\desarrollo-servicios-web-I\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Repositorio\\RepositorioSQL\\detVentaSQL.cs",
-              "RelativeDocumentMoniker": "Proyecto_Botica\\Repositorio\\RepositorioSQL\\detVentaSQL.cs",
-              "ToolTip": "C:\\Users\\lenni\\Documents\\Lennin\\Cibertec\\ciclo_v\\desarrollo-servicios-web-I\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Repositorio\\RepositorioSQL\\detVentaSQL.cs",
-              "RelativeToolTip": "Proyecto_Botica\\Repositorio\\RepositorioSQL\\detVentaSQL.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T05:01:44.294Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ventaSQL.cs",
-              "DocumentMoniker": "C:\\Users\\lenni\\Documents\\Lennin\\Cibertec\\ciclo_v\\desarrollo-servicios-web-I\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Repositorio\\RepositorioSQL\\ventaSQL.cs",
-              "RelativeDocumentMoniker": "Proyecto_Botica\\Repositorio\\RepositorioSQL\\ventaSQL.cs",
-              "ToolTip": "C:\\Users\\lenni\\Documents\\Lennin\\Cibertec\\ciclo_v\\desarrollo-servicios-web-I\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Repositorio\\RepositorioSQL\\ventaSQL.cs",
-              "RelativeToolTip": "Proyecto_Botica\\Repositorio\\RepositorioSQL\\ventaSQL.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAYwBwAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T04:17:20.052Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ListarProductosVenta.cshtml",
-              "DocumentMoniker": "C:\\Users\\lenni\\Documents\\Lennin\\Cibertec\\ciclo_v\\desarrollo-servicios-web-I\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Views\\Venta\\ListarProductosVenta.cshtml",
-              "RelativeDocumentMoniker": "Proyecto_Botica\\Views\\Venta\\ListarProductosVenta.cshtml",
-              "ToolTip": "C:\\Users\\lenni\\Documents\\Lennin\\Cibertec\\ciclo_v\\desarrollo-servicios-web-I\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Views\\Venta\\ListarProductosVenta.cshtml",
-              "RelativeToolTip": "Proyecto_Botica\\Views\\Venta\\ListarProductosVenta.cshtml",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAAAE4AAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-05T07:27:34.552Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "VentaController.cs",
-              "DocumentMoniker": "C:\\Users\\lenni\\Documents\\Lennin\\Cibertec\\ciclo_v\\desarrollo-servicios-web-I\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Controllers\\VentaController.cs",
-              "RelativeDocumentMoniker": "Proyecto_Botica\\Controllers\\VentaController.cs",
-              "ToolTip": "C:\\Users\\lenni\\Documents\\Lennin\\Cibertec\\ciclo_v\\desarrollo-servicios-web-I\\PROYECTO_BOTICA_DSW\\Proyecto_Botica\\Proyecto_Botica\\Controllers\\VentaController.cs",
-              "RelativeToolTip": "Proyecto_Botica\\Controllers\\VentaController.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAAAB4AAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-05T07:19:48.236Z",
-              "EditorCaption": ""
             }
           ]
         }
