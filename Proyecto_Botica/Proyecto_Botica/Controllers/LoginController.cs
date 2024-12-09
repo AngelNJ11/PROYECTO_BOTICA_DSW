@@ -35,7 +35,7 @@ namespace Proyecto_Botica.Controllers
                 }
                 else if (usuario.Rol == "Cajero")
                 {
-                    return RedirectToAction("Index", "Cajero");
+                    return RedirectToAction("ListarProductosVenta", "Venta");
                 }
                 else
                 {

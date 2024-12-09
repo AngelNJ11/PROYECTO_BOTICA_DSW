@@ -11,7 +11,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-primary">
         <div class="container">
             <a class="navbar-brand text-white d-flex align-items-center" href="#">
-                <img src="~/img/icon-logo.jpg" alt="Logo" style="height: 90px; width: 90px;" />
+                <img src="~/img/icon-logo.jpg" alt="Logo" style="height: 40px; width: 40px;" />
                 <span style="font-weight: bold; font-size: 25px; line-height: 1;">BOTICA</span>
             </a>
             <div class="collapse navbar-collapse">
@@ -42,8 +42,7 @@
                 Bienvenido, Administrador @Context.Session.GetString("UsuarioNombre") @Context.Session.GetString("UsuarioApellido")
             </span>
             <a href="@Url.Action("Logout", "Home")"
-               class="btn btn-danger"
-               style="padding: 8px 20px; font-weight: bold; border-radius: 20px; color: black;">
+               class="btn btn-danger">
                 <i class="bi bi-box-arrow-right"></i> Cerrar Sesión
             </a>
         </div>
