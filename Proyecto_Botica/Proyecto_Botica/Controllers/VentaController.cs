@@ -30,6 +30,7 @@ namespace Proyecto_Botica.Controllers
             {
                 var mensaje = System.Text.Json.JsonSerializer.Deserialize<string>(msjData);
                 ViewBag.mensajeVenta = mensaje;
+                HttpContext.Session.SetString("ItemString", System.Text.Json.JsonSerializer.Serialize(""));
             }
 
             if (jsonData.IsNullOrEmpty())

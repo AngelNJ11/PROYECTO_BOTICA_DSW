@@ -26,9 +26,10 @@ namespace Proyecto_Botica.Repositorio.RepositorioSQL
                 {
                     venta = new Venta
                     {
-                        Fecha = dr.GetDateTime(0),
-                        total = dr.GetDecimal(1),
-                        Id = dr.GetInt32(2)
+                        Id = dr.GetInt32(0),
+                        Fecha = dr.GetDateTime(1),
+                        total = dr.GetDecimal(2),
+                        
                     };
                 }
                 dr.Close();
