@@ -1,13 +1,25 @@
+<<<<<<< HEAD
 Archivos de Visual Studio
+=======
+# Archivos de Visual Studio
+>>>>>>> origin/prueba02
 .vs/
 *.user
 *.suo
 
+<<<<<<< HEAD
 Archivos binarios y de compilacion
 bin/
 obj/
 
 Configuracion generada automaticamente
+=======
+# Archivos binarios y de compilacion
+bin/
+obj/
+
+# Configuracion generada automaticamente
+>>>>>>> origin/prueba02
 *.dll
 *.exe
 *.pdb
