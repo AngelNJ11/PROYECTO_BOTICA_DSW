@@ -17,6 +17,7 @@ builder.Services.AddSingleton<IProducto, productoSQL>();
 builder.Services.AddSingleton<ICategoria, categoriaSQL>();
 builder.Services.AddSingleton<IVenta, ventaSQL>();
 builder.Services.AddSingleton<IDetalleVenta, detVentaSQL>();
+builder.Services.AddSingleton<IOrdenCompra, ordenCompraSQL>();
 
 // Add services to the container.
 
