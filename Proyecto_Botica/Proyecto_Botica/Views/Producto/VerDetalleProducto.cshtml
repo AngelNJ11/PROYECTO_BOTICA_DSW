@@ -1,0 +1,30 @@
+﻿@model Proyecto_Botica.Models.Producto
+
+@{
+    ViewData["Title"] = "VerDetalleProducto";
+    Layout = null;
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link href="~/css/Producto/detalleProducto.css" rel="stylesheet" />
+}
+
+<h1>Detalle del Producto</h1>
+<hr />
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Nombre</h5>
+        <p class="card-text"><strong>Descripción:</strong> @Model.Descripcion</p>
+        <p class="card-text"><strong>Categoría:</strong> @Model.NombreCategoria</p>
+        <p class="card-text"><strong>Fecha de Fabricación:</strong> @Model.FechaFabricacion?.ToString("dd/MM/yyyy")</p>
+        <p class="card-text"><strong>Fecha de Vencimiento:</strong> @Model.FechaVencimiento?.ToString("dd/MM/yyyy")</p>
+        <p class="card-text"><strong>Precio:</strong> @Model.Precio.ToString("C")</p>
+        <p class="card-text"><strong>Stock:</strong> @Model.Stock</p>
+        <p class="card-text"><strong>Imagen:</strong></p>
+        <img src="@Model.Imagen" alt="@Model.Nombre" class="img-fluid" style="max-width: 300px; height: auto;" />
+
+        <div class="boton">
+            <a href="@Url.Action("ListarProducto", "Producto")" class="btn btn-primary">Volver a la Lista</a>
+        </div>
+    </div>
+</div>
+
