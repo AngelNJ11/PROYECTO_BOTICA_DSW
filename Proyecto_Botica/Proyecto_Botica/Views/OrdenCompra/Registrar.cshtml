@@ -1,55 +1,81 @@
 ﻿@model Proyecto_Botica.Models.OrdenCompra
 
 @{
-    ViewData["Title"] = "Registrar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Registrar Orden de Compra";
 }
 
-<h1>Registrar</h1>
+<div class="container mt-5">
+    <h1 class="text-center text-dark mb-4">Registrar Orden de Compra</h1>
 
-<h4>OrdenCompra</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Registrar">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="IdOrdenCompra" class="control-label"></label>
-                <input asp-for="IdOrdenCompra" class="form-control" />
-                <span asp-validation-for="IdOrdenCompra" class="text-danger"></span>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-dark text-white">
+                    <h4 class="mb-0">Orden de Compra</h4>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Registrar">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="form-group row">
+                            <label asp-for="IdOrdenCompra" class="col-sm-4 col-form-label">ID Orden</label>
+                            <div class="col-sm-8">
+                                <input asp-for="IdOrdenCompra" class="form-control" placeholder="ID de la Orden" />
+                                <span asp-validation-for="IdOrdenCompra" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="form-group row">
+                            <label asp-for="IdProducto" class="col-sm-4 col-form-label">ID Producto</label>
+                            <div class="col-sm-8">
+                                <input asp-for="IdProducto" class="form-control" placeholder="ID del Producto" />
+                                <span asp-validation-for="IdProducto" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="form-group row">
+                            <label asp-for="IdProveedor" class="col-sm-4 col-form-label">ID Proveedor</label>
+                            <div class="col-sm-8">
+                                <input asp-for="IdProveedor" class="form-control" placeholder="ID del Proveedor" />
+                                <span asp-validation-for="IdProveedor" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="form-group row">
+                            <label asp-for="Cantidad" class="col-sm-4 col-form-label">Cantidad</label>
+                            <div class="col-sm-8">
+                                <input asp-for="Cantidad" class="form-control" placeholder="Cantidad" />
+                                <span asp-validation-for="Cantidad" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="form-group row">
+                            <label asp-for="Fecha" class="col-sm-4 col-form-label">Fecha</label>
+                            <div class="col-sm-8">
+                                <input asp-for="Fecha" class="form-control" placeholder="Fecha (YYYY-MM-DD)" />
+                                <span asp-validation-for="Fecha" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="form-group row">
+                            <label asp-for="Precio" class="col-sm-4 col-form-label">Precio</label>
+                            <div class="col-sm-8">
+                                <input asp-for="Precio" class="form-control" placeholder="Precio" />
+                                <span asp-validation-for="Precio" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="form-group text-center">
+                            <input type="submit" value="Registrar" class="btn btn-dark" />
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="IdProducto" class="control-label"></label>
-                <input asp-for="IdProducto" class="form-control" />
-                <span asp-validation-for="IdProducto" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IdProveedor" class="control-label"></label>
-                <input asp-for="IdProveedor" class="form-control" />
-                <span asp-validation-for="IdProveedor" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Cantidad" class="control-label"></label>
-                <input asp-for="Cantidad" class="form-control" />
-                <span asp-validation-for="Cantidad" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Fecha" class="control-label"></label>
-                <input asp-for="Fecha" class="form-control" />
-                <span asp-validation-for="Fecha" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Precio" class="control-label"></label>
-                <input asp-for="Precio" class="form-control" />
-                <span asp-validation-for="Precio" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
+    </div>
+
+    <div class="text-center mt-3">
+        <a asp-action="ListarOrdenCompra" class="btn btn-link">Volver a la lista</a>
     </div>
 </div>
-
-<div>
-    <a asp-action="ListarOrdenCompra">Back to List</a>
-</div>
-

@@ -1,65 +1,56 @@
 ﻿@model IEnumerable<Proyecto_Botica.Models.OrdenCompra>
 
 @{
-    ViewData["Title"] = "ListarOrdenCompra";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Listar Orden de Compra";
 }
 
-<h1>ListarOrdenCompra</h1>
+<br>
+
+<h1 class="titulo">Listar Orden de Compra</h1>
 
 <p>
-    <a asp-action="Registrar">Create New</a>
+    <a asp-action="Registrar" class="btn btn-primary">Registrar Orden de Compra</a>
 </p>
-<table class="table">
-    <thead>
+<table class="table table-striped table-bordered">
+    <thead class="table-dark">
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.IdOrdenCompra)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdProducto)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdProveedor)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cantidad)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Fecha)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Precio)
-            </th>
-            <th></th>
+            <th>ID</th>
+            <th>ID Producto</th>
+            <th>ID Proveedor</th>
+            <th>Cantidad</th>
+            <th class="fecha">Fecha</th>
+            <th>Precio</th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdOrdenCompra)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdProducto)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdProveedor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cantidad)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Fecha)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Precio)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.IdOrdenCompra)</td>
+                <td>@Html.DisplayFor(modelItem => item.IdProducto)</td>
+                <td>@Html.DisplayFor(modelItem => item.IdProveedor)</td>
+                <td>@Html.DisplayFor(modelItem => item.Cantidad)</td>
+                <td class="fecha">@Html.DisplayFor(modelItem => item.Fecha)</td>
+                <td>S/. @Html.DisplayFor(modelItem => item.Precio)</td>
+                <td class="boton">
+                    <div class="botones">
+                        @Html.ActionLink("Editar", "Edit", new { id = item.IdOrdenCompra }, new { @class = "btn btn-success" })
+                    </div>
+                    <div class="botones">
+                        @Html.ActionLink("Ver Detalles", "Details", new { id = item.IdOrdenCompra }, new { @class = "btn btn-info" })
+                    </div>
+                    <div class="botones">
+                        @Html.ActionLink("Eliminar", "Delete", new { id = item.IdOrdenCompra },
+                                 new
+                                 {
+                                     @class = "btn btn-danger",
+                                     onclick = "return confirm('¿Estás seguro de que deseas eliminar esta orden de compra?');"
+                                 })
+                    </div>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

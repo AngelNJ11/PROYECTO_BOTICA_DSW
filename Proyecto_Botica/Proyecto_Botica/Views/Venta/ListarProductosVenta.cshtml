@@ -24,33 +24,12 @@
                     <span style="font-weight: bold; font-size: 25px; line-height: 1;">BOTICA</span>
                 </a>
 
+            
+                           <a class="dropdown-item" href="@Url.ActionLink("Registrar", "OrdenCompra")">Agregar Orden Compra</a>
+                           <a class="dropdown-item" href="@Url.ActionLink("ListarOrdenCompra", "OrdenCompra")">Listar Orden Compra</a>
+            
 
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownProducto"
-                           role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Mantenimiento Producto
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownProducto">
-                            <li><a class="dropdown-item" href="@Url.Action("AgregarProducto", "Producto")">Agregar Producto</a></li>
-                            <li><a class="dropdown-item" href="@Url.Action("ListarProducto", "Producto")">Listar Productos</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownProveedor"
-                           role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Mantenimiento Proveedor
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownProveedor">
-                            <li><a class="dropdown-item" href="@Url.Action("AgregarProveedor", "Proveedor")">Agregar Proveedor</a></li>
-                            <li><a class="dropdown-item" href="@Url.Action("ListarProveedor", "Proveedor")">Listar Proveedores</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-
-        
+           
             <div id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
