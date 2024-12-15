@@ -1,16 +1,18 @@
 ﻿using Microsoft.Data.SqlClient;
-using Proyecto_Botica.Models;
+using Proyecto_Botica_API.Models;
+using Proyecto_Botica_API.Repositorio.Interfaces;
 
-namespace Proyecto_Botica.Repositorio.RepositorioSQL
+namespace Proyecto_Botica_API.Repositorio.DAO
 {
-    public class categoriaSQL : ICategoria
+    public class CategoriaDAO : ICategoria
     {
         private readonly string _connection;
-        public categoriaSQL()
+        public CategoriaDAO()
         {
-            _connection = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build().GetConnectionString("cnx");
+            _connection = new ConfigurationBuilder().AddJsonFile("appsettings.json")
+                .Build()
+                .GetConnectionString("cnx");
         }
-
         public IEnumerable<Categoria> obtenerCategorias()
         {
             List<Categoria> categorias = new List<Categoria>();

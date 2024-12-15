@@ -9,6 +9,21 @@
 
 <h1 class="titulo">Listar Producto</h1>
 
+@if (TempData["Mensaje"] != null)
+{
+    var mensajeTipo = TempData["MensajeTipo"]?.ToString();
+    var alertaClase = mensajeTipo switch
+    {
+        "eliminacion" => "alert-danger",
+        "actualizado" => "alert-warning",
+        _ => "alert-success"
+    };
+
+    <div class="alert @alertaClase" id="mensajeExito">
+        @TempData["Mensaje"]
+    </div>
+}
+
 <p>
     <a asp-action="AgregarProducto" class="btn btn-primary">Registrar Producto</a>
 </p>
@@ -18,8 +33,8 @@
             <th>ID</th>
             <th>Nombre</th>
             <th>Categoría</th>
-            <th class="fecha">Fecha de Fabricación</th>
-            <th class="fecha">Fecha de Vencimiento</th>
+            <th class="fecha">Fabricación</th>
+            <th class="fecha">Vencimiento</th>
             <th>Precio</th>
             <th>Stock</th>
             <th>Imagen</th>
@@ -37,10 +52,10 @@
                 <td class="fecha">@Html.DisplayFor(modelItem => item.FechaVencimiento)</td>
                 <td>S/. @Html.DisplayFor(modelItem => item.Precio)</td>
                 <td>@Html.DisplayFor(modelItem => item.Stock)</td>
-                <td>
-                    @if (!string.IsNullOrEmpty(item.Imagen)) 
+                <td style="text-align: center; vertical-align: middle;">
+                    @if (!string.IsNullOrEmpty(item.Imagen))
                     {
-                        <img src="@item.Imagen" alt="@item.Nombre" style="max-width: 100px; max-height: 100px; width: auto; height: auto;" />
+                        <img src="@item.Imagen" alt="@item.Nombre" style="max-width: 50px; max-height: 50px; width: auto; height: auto;" />
                     }
                     else
                     {
@@ -48,13 +63,9 @@
                     }
                 </td>
                 <td class="boton">
-                    <div class="botones">
+                    <div class="d-flex justify-content-around">
                         @Html.ActionLink("Editar", "EditProducto", new { id = item.IdProducto }, new { @class = "btn btn-success" })
-                    </div>
-                    <div class="botones">
                         @Html.ActionLink("Ver Detalles", "VerDetalleProducto", new { id = item.IdProducto }, new { @class = "btn btn-info" })
-                    </div>
-                    <div class="botones">
                         @Html.ActionLink("Eliminar", "EliminarProducto", new { id = item.IdProducto },
                                  new
                                  {
@@ -62,10 +73,19 @@
                                      onclick = "return confirm('¿Estás seguro de que deseas eliminar este producto?');"
                                  })
                     </div>
-
                 </td>
             </tr>
         }
     </tbody>
 </table>
 
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            setTimeout(function () {
+                $("#mensajeExito").fadeOut("slow");
+            }, 5000);
+        });
+    </script>
+}

@@ -13,8 +13,6 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true; // Necesario para que funcione sin consentimiento de cookies
 });
 
-builder.Services.AddSingleton<IProducto, productoSQL>();
-builder.Services.AddSingleton<ICategoria, categoriaSQL>();
 builder.Services.AddSingleton<IVenta, ventaSQL>();
 builder.Services.AddSingleton<IDetalleVenta, detVentaSQL>();
 

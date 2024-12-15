@@ -3,24 +3,22 @@ using Microsoft.IdentityModel.Tokens;
 using Proyecto_Botica.Models;
 using Proyecto_Botica.Repositorio;
 using Proyecto_Botica.Repositorio.RepositorioSQL;
+using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 
 namespace Proyecto_Botica.Controllers
 {
     public class VentaController : Controller
     {
-        IProducto _producto;
-        ICategoria _categoria;
         IVenta _venta;
         IDetalleVenta _detalleVenta;
         public VentaController ()
         {
-            _producto = new productoSQL();
-            _categoria = new categoriaSQL();
             _venta = new ventaSQL();
             _detalleVenta = new detVentaSQL();
         }
 
-        public async Task<IActionResult> ListarProductosVenta (int idCategoria = 0)
+        public async Task<IActionResult> ListarProductosVenta(int idCategoria = 0)
         {
             List<Producto> lstProductos;
             var jsonData = HttpContext.Session.GetString("ItemList");
@@ -37,7 +35,8 @@ namespace Proyecto_Botica.Controllers
             {
                 lstProductos = new List<Producto>();
                 HttpContext.Session.SetString("ItemList", System.Text.Json.JsonSerializer.Serialize(lstProductos));
-            }else
+            }
+            else
             {
                 lstProductos = System.Text.Json.JsonSerializer.Deserialize<List<Producto>>(jsonData);
             }
@@ -46,15 +45,65 @@ namespace Proyecto_Botica.Controllers
             ViewBag.idproducto = lstProductos.Count;
             ViewBag.subtotal = subtotal;
             ViewData["productosEscogidos"] = lstProductos;
-            ViewData["Categorias"] = _categoria.obtenerCategorias();
 
-            if (idCategoria == 0)
+            List<Categoria> categorias = new List<Categoria>();
+            using (var httpClient = new HttpClient())
             {
-                return View(await Task.Run(() => _producto.obtenerProductos()));
+                httpClient.BaseAddress = new Uri("https://localhost:7191/api/Categoria/");
+                HttpResponseMessage response = await httpClient.GetAsync("obtenerCategorias");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string apiRes = await response.Content.ReadAsStringAsync();
+                    categorias = JsonConvert.DeserializeObject<List<Categoria>>(apiRes)?.ToList() ?? new List<Categoria>();
+                }
+                else
+                {
+                    ViewBag.ErrorMessage = "Error al obtener las categorías.";
+                }
+            }
+            ViewData["Categorias"] = categorias;
+
+            List<Producto> productos = new List<Producto>();
+            using (var httpClient = new HttpClient())
+            {
+                if (idCategoria == 0)
+                {
+                    httpClient.BaseAddress = new Uri("https://localhost:7191/api/Producto/");
+                    HttpResponseMessage response = await httpClient.GetAsync("obtenerProductos");
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string apiRes = await response.Content.ReadAsStringAsync();
+                        productos = JsonConvert.DeserializeObject<List<Producto>>(apiRes)?.ToList() ?? new List<Producto>();
+                    }
+                    else
+                    {
+                        ViewBag.ErrorMessage = "Error al obtener los productos.";
+                    }
+                }
+                else
+                {
+                    httpClient.BaseAddress = new Uri("https://localhost:7191/api/Producto/");
+                    HttpResponseMessage response = await httpClient.GetAsync($"obtenerProductosxCategoria/"+idCategoria);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string apiRes = await response.Content.ReadAsStringAsync();
+                        productos = JsonConvert.DeserializeObject<List<Producto>>(apiRes)?.ToList() ?? new List<Producto>();
+                    }
+                    else
+                    {
+                        ViewBag.ErrorMessage = "Error al obtener los productos por categoría.";
+                    }
+                }
             }
 
-            return View(await Task.Run(() => _producto.obtenerProductosxCategoria(idCategoria)));
+            return View(productos);
         }
+
+
+
 
         public IActionResult Comprar()
         {
@@ -106,7 +155,7 @@ namespace Proyecto_Botica.Controllers
 
         public IActionResult agregarProductoAlCarrito(int idProducto = 0)
         {
-            List<Producto> lstProductos;
+            /*List<Producto> lstProductos;
             var jsonData = HttpContext.Session.GetString("ItemList");
             Producto productoNuevo = _producto.obtenerProductosxId(idProducto);
 
@@ -128,7 +177,7 @@ namespace Proyecto_Botica.Controllers
                         HttpContext.Session.SetString("ItemList", System.Text.Json.JsonSerializer.Serialize(lstProductos));
                     }
                 }
-            }
+            }*/
             return RedirectToAction("ListarProductosVenta");
         }
     }

@@ -2,29 +2,117 @@
 
 @{
     ViewData["Title"] = "VerDetalleProducto";
-    Layout = null;
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-    <link href="~/css/Producto/detalleProducto.css" rel="stylesheet" />
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Detalle del Producto</h1>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .card {
+        max-width: 50%;
+        margin: 20px auto;
+        border-radius: 12px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
+    }
+
+    .card-body {
+        padding: 20px;
+        font-size: 1.2rem;
+        color: #444;
+    }
+
+    .card-title {
+        text-align: center;
+        font-size: 1.7rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+        text-transform: capitalize;
+    }
+
+    .card-text {
+        margin-bottom: 10px;
+        line-height: 1.5;
+    }
+
+        .card-text strong {
+            display: block;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+    .btn {
+        font-size: 1.1rem;
+        border-radius: 8px;
+        display: block;
+        margin: 0 10px;
+    }
+
+    .img-fluid {
+        display: block;
+        margin: 20px auto;
+        border-radius: 8px;
+        max-width: 100%;
+        height: auto;
+        transition: transform 0.3s ease;
+    }
+
+        .img-fluid:hover {
+            transform: scale(1.05);
+        }
+
+    .d-flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btn-group {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+</style>
+
+<h1 class="text-center font-weight-bold">Detalle del Producto</h1>
 <hr />
 
-<div class="card">
+<div class="card mx-auto">
     <div class="card-body">
-        <h5 class="card-title">@Model.Nombre</h5>
-        <p class="card-text"><strong>Descripción:</strong> @Model.Descripcion</p>
-        <p class="card-text"><strong>Categoría:</strong> @Model.NombreCategoria</p>
-        <p class="card-text"><strong>Fecha de Fabricación:</strong> @Model.FechaFabricacion?.ToString("dd/MM/yyyy")</p>
-        <p class="card-text"><strong>Fecha de Vencimiento:</strong> @Model.FechaVencimiento?.ToString("dd/MM/yyyy")</p>
-        <p class="card-text"><strong>Precio:</strong> @Model.Precio.ToString("C")</p>
-        <p class="card-text"><strong>Stock:</strong> @Model.Stock</p>
-        <p class="card-text"><strong>Imagen:</strong></p>
-        <img src="@Model.Imagen" alt="@Model.Nombre" class="img-fluid" style="max-width: 300px; height: auto;" />
+        <h5 class="card-title text-center text-capitalize font-weight-bold">@Model.Nombre</h5>
+        <p class="card-text">
+            <strong>Descripción:</strong> @Model.Descripcion
+        </p>
+        <p class="card-text">
+            <strong>Categoría:</strong> @Model.NombreCategoria
+        </p>
+        <p class="card-text">
+            <strong>Fecha de Fabricación:</strong> @Model.FechaFabricacion?.ToString("dd/MM/yyyy")
+        </p>
+        <p class="card-text">
+            <strong>Fecha de Vencimiento:</strong> @Model.FechaVencimiento?.ToString("dd/MM/yyyy")
+        </p>
+        <p class="card-text">
+            <strong>Precio:</strong> @Model.Precio.ToString("C")
+        </p>
+        <p class="card-text">
+            <strong>Stock:</strong> @Model.Stock
+        </p>
+        <p class="card-text">
+            <strong>Imagen:</strong>
+            <img src="@Model.Imagen" alt="@Model.Nombre" class="img-fluid rounded mx-auto d-block mt-3" style="max-width: 250px; max-height: 250px;" />
+        </p>
 
-        <div class="boton">
+        <div class="btn-group mt-3">
             <a href="@Url.Action("ListarProducto", "Producto")" class="btn btn-primary">Volver a la Lista</a>
         </div>
     </div>
 </div>
-

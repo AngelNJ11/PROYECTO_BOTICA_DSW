@@ -2,72 +2,78 @@
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewData["Title"] = "EditProveedor";
+    ViewData["Title"] = "Editar Proveedor";
 }
 
-<div class="container mt-5">
-    <h1 class="text-center text-dark mb-4">Editar Proveedor</h1>
+<br>
+<h1>Editar Proveedor</h1>
+<hr />
+<div class="form-container">
+    <form asp-action="EditProveedor" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-header bg-dark text-white">
-                    <h4 class="mb-0">Proveedor</h4>
-                </div>
-                <div class="card-body">
-                    <form asp-action="EditProveedor">
-                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-                        <div class="form-group row">
-                            <label asp-for="idProveedor" class="col-sm-4 col-form-label"></label>
-                            <div class="col-sm-8">
-                                <input asp-for="idProveedor" class="form-control" placeholder="ID del Proveedor" readonly />
-                                <span asp-validation-for="idProveedor" class="text-danger"></span>
-                            </div>
-                        </div>
-                        <br />
-                        <div class="form-group row">
-                            <label asp-for="nombre" class="col-sm-4 col-form-label"></label>
-                            <div class="col-sm-8">
-                                <input asp-for="nombre" class="form-control" placeholder="Nombre del Proveedor" />
-                                <span asp-validation-for="nombre" class="text-danger"></span>
-                            </div>
-                        </div>
-                        <br />
-                        <div class="form-group row">
-                            <label asp-for="telefono" class="col-sm-4 col-form-label"></label>
-                            <div class="col-sm-8">
-                                <input asp-for="telefono" class="form-control" placeholder="Teléfono" />
-                                <span asp-validation-for="telefono" class="text-danger"></span>
-                            </div>
-                        </div>
-                        <br />
-                        <div class="form-group row">
-                            <label asp-for="correo" class="col-sm-4 col-form-label"></label>
-                            <div class="col-sm-8">
-                                <input asp-for="correo" class="form-control" placeholder="Correo Electrónico" />
-                                <span asp-validation-for="correo" class="text-danger"></span>
-                            </div>
-                        </div>
-                        <br />
-                        <div class="form-group row">
-                            <label asp-for="direccion" class="col-sm-4 col-form-label"></label>
-                            <div class="col-sm-8">
-                                <input asp-for="direccion" class="form-control" placeholder="Dirección" />
-                                <span asp-validation-for="direccion" class="text-danger"></span>
-                            </div>
-                        </div>
-                        <br />
-                        <div class="form-group text-center">
-                            <input type="submit" value="Guardar" class="btn btn-dark" />
-                        </div>
-                    </form>
-                </div>
-            </div>
+        <div class="form-group">
+            <label asp-for="idProveedor" class="control-label">ID Proveedor</label>
+            <input asp-for="idProveedor" class="form-control" placeholder="ID del Proveedor" readonly />
+            <span asp-validation-for="idProveedor" class="text-danger"></span>
         </div>
-    </div>
+        <div class="form-group">
+            <label asp-for="nombre" class="control-label">Nombre</label>
+            <input asp-for="nombre" class="form-control" placeholder="Nombre del Proveedor" />
+            <span asp-validation-for="nombre" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="telefono" class="control-label">Teléfono</label>
+            <input asp-for="telefono" class="form-control" placeholder="Teléfono" />
+            <span asp-validation-for="telefono" class="text-danger"></span>
+        </div>
 
-    <div class="text-center mt-3">
-        <a asp-action="ListarProveedor" class="btn btn-link">Volver a la lista</a>
-    </div>
+        <div class="form-group">
+            <label asp-for="correo" class="control-label">Correo Electrónico</label>
+            <input asp-for="correo" class="form-control" placeholder="Correo Electrónico" />
+            <span asp-validation-for="correo" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="direccion" class="control-label">Dirección</label>
+            <input asp-for="direccion" class="form-control" placeholder="Dirección" />
+            <span asp-validation-for="direccion" class="text-danger"></span>
+        </div>
+
+        <div class="button-row">
+            <input type="submit" value="Guardar" class="btn btn-primary" />
+            <a asp-action="ListarProveedor" class="btn btn-success">Volver a la lista</a>
+        </div>
+    </form>
 </div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+<style>
+    .form-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        background-color: #f9f9f9;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .button-row {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .btn {
+        margin-top: 10px;
+    }
+</style>

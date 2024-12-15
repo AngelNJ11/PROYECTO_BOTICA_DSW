@@ -2,152 +2,90 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Data.SqlClient;
+using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json;
 using Proyecto_Botica.Models;
 using System.Data;
-using static System.Net.Mime.MediaTypeNames;
+using System.Text;
 
 namespace Proyecto_Botica.Controllers
 {
     public class ProductoController : Controller
     {
-        private readonly IConfiguration configuration;
-
-        public ProductoController(IConfiguration config)
-        {
-            configuration = config;
-        }
-        public IEnumerable<Producto> ListaProductos()
-        {
-            List<Producto> productos = new List<Producto>();
-            using (SqlConnection cnx = new SqlConnection(configuration["ConnectionStrings:cnx"]))
-            {
-                cnx.Open();
-                SqlCommand cmd = new SqlCommand("sp_ListarProductos", cnx);
-                cmd.CommandType = CommandType.StoredProcedure;
-                SqlDataReader dr = cmd.ExecuteReader();
-
-                while (dr.Read())
-                {
-                    productos.Add(new Producto
-                    {
-                        IdProducto = dr.GetInt32(0),
-                        Nombre = dr.GetString(1),
-                        Descripcion = dr.GetString(2),
-                        NombreCategoria = dr.GetString(3),
-                        FechaFabricacion = dr.IsDBNull(4) ? (DateTime?)null : dr.GetDateTime(4),
-                        FechaVencimiento = dr.IsDBNull(5) ? (DateTime?)null : dr.GetDateTime(5),
-                        Precio = dr.GetDecimal(6),
-                        Stock = dr.GetInt32(7),
-                        Imagen = dr.GetString(8)
-                    });
-                }
-                dr.Close();
-            }
-            return productos;
-        }
+       
         public async Task<IActionResult> ListarProducto()
         {
-            var productos = await Task.Run(() => ListaProductos());
-            var categorias = ListaCategorias().ToDictionary(c => c.IdCategoria, c => c.Nombre);
-            ViewBag.Categorias = categorias;
-
-            return View(productos);
-        }
-        public IEnumerable<Categoria> ListaCategorias()
-        {
-            List<Categoria> categorias = new List<Categoria>();
-            using (SqlConnection cnx = new SqlConnection(configuration["ConnectionStrings:cnx"]))
+            List<Producto> lstProductos = new List<Producto>();
+            using (var prod = new HttpClient())
             {
-                cnx.Open();
-                SqlCommand cmd = new SqlCommand("sp_ListarCategorias", cnx);
-                SqlDataReader dr = cmd.ExecuteReader();
-
-                while (dr.Read())
-                {
-                    categorias.Add(new Categoria
-                    {
-                        IdCategoria = dr.GetInt32(0),
-                        Nombre = dr.GetString(1)
-                    });
-                }
-                dr.Close();
+                prod.BaseAddress = new Uri("https://localhost:7191/api/Producto/");
+                HttpResponseMessage response = await prod.GetAsync("obtenerProductos");
+                string apiResponse = await response.Content.ReadAsStringAsync();
+                lstProductos = JsonConvert.DeserializeObject<List<Producto>>(apiResponse).ToList();
             }
-            return categorias;
+            return View(await Task.Run(() => lstProductos));
         }
-        private Producto BuscarProductoPorId(int id)
-        {
-            Producto producto = null;
-            using (SqlConnection cnx = new SqlConnection(configuration["ConnectionStrings:cnx"]))
-            {
-                cnx.Open();
-                SqlCommand cmd = new SqlCommand("sp_ObtenerProductoPorId", cnx);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@IdProducto", id);
-
-                SqlDataReader dr = cmd.ExecuteReader();
-                if (dr.Read())
-                {
-                    producto = new Producto
-                    {
-                        IdProducto = dr.GetInt32(0),
-                        Nombre = dr.GetString(1),
-                        Descripcion = dr.GetString(2),
-                        idCategoria = dr.GetInt32(3),
-                        NombreCategoria = dr.GetString(4),
-                        FechaFabricacion = dr.IsDBNull(5) ? (DateTime?)null : dr.GetDateTime(5),
-                        FechaVencimiento = dr.IsDBNull(6) ? (DateTime?)null : dr.GetDateTime(6),
-                        Precio = dr.GetDecimal(7),
-                        Stock = dr.GetInt32(8),
-                        Imagen = dr.GetString(9)
-                    };
-                }
-                dr.Close();
-            }
-            return producto;
-        }
-        private string GuardarProducto(Producto producto)
+        public async Task<IActionResult> EliminarProducto(int id)
         {
             string mensaje = "";
-            using (SqlConnection cnx = new SqlConnection(configuration["ConnectionStrings:cnx"]))
+
+            using (var client = new HttpClient())
             {
+                client.BaseAddress = new Uri("https://localhost:7191/api/Producto/");
+
                 try
                 {
-                    cnx.Open();
-                    SqlCommand cmd = new SqlCommand("sp_GuardarProducto", cnx);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@IdProducto", producto.IdProducto == 0 ? (object)DBNull.Value : producto.IdProducto);
-                    cmd.Parameters.AddWithValue("@Nombre", producto.Nombre);
-                    cmd.Parameters.AddWithValue("@Descripcion", producto.Descripcion);
-                    cmd.Parameters.AddWithValue("@IdCategoria", producto.idCategoria);
-                    cmd.Parameters.AddWithValue("@FechaFabricacion", producto.FechaFabricacion ?? (object)DBNull.Value);
-                    cmd.Parameters.AddWithValue("@FechaVencimiento", producto.FechaVencimiento ?? (object)DBNull.Value);
-                    cmd.Parameters.AddWithValue("@Precio", producto.Precio);
-                    cmd.Parameters.AddWithValue("@Stock", producto.Stock);
-                    cmd.Parameters.AddWithValue("@Imagen", producto.Imagen);
+                    HttpResponseMessage response = await client.DeleteAsync($"ElimEliminarProducto/{id}");
 
-                    int rowsAffected = cmd.ExecuteNonQuery();
-                    mensaje = rowsAffected > 0 ? "Producto guardado exitosamente." : "No se pudo guardar el producto.";
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string apiResponse = await response.Content.ReadAsStringAsync();
+                    }
+                    else
+                    {
+                        mensaje = "Error al eliminar el proveedor. Intente nuevamente.";
+                    }
                 }
                 catch (Exception ex)
                 {
-                    mensaje = "Error al guardar el producto: " + ex.Message;
+                    mensaje = "Error al intentar eliminar el producto: " + ex.Message;
                 }
             }
-            return mensaje;
-        }
+            TempData["MensajeTipo"] = "eliminacion";
+            TempData["Mensaje"] = "Producto Eliminado";
 
+            return RedirectToAction("ListarProducto");
+        }
         public async Task<IActionResult> AgregarProducto()
         {
-            var categorias = await Task.Run(() => ListaCategorias());
-            ViewBag.Categorias = categorias;
+            List<Categoria> temp = new List<Categoria>();
 
-            return View();
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://localhost:7191/api/Categoria/"); 
+
+                HttpResponseMessage responseMessage = await client.GetAsync("obtenerCategorias");
+
+                if (responseMessage.IsSuccessStatusCode)
+                {
+                    string apiRest = await responseMessage.Content.ReadAsStringAsync();
+                    temp = JsonConvert.DeserializeObject<List<Categoria>>(apiRest);
+                }
+                else
+                {
+                    ViewBag.Error = "No se pudo obtener las categorías. Intente nuevamente.";
+                }
+            }
+
+            ViewBag.Categorias = new SelectList(temp, "IdCategoria", "Nombre");
+
+            return View(new Producto());
         }
-
+       
         [HttpPost]
         public async Task<IActionResult> AgregarProducto(Producto producto, IFormFile imagen)
         {
-
+            string mensaje = "";
 
             if (ModelState.IsValid)
             {
@@ -165,122 +103,112 @@ namespace Proyecto_Botica.Controllers
                     producto.Imagen = "/img/productos/default_sin_imagen.png";
                 }
 
-                var mensaje = await Task.Run(() => GuardarProducto(producto));
-                TempData["Mensaje"] = mensaje;
-                return RedirectToAction("ListarProducto");
-            }
-
-            if (!ModelState.IsValid)
-            {
-                foreach (var state in ModelState)
+                using (var client = new HttpClient())
                 {
-                    foreach (var error in state.Value.Errors)
-                    {
-                        Console.WriteLine($"Error: {error.ErrorMessage}");
-                    }
+                    client.BaseAddress = new Uri("https://localhost:7191/api/Producto/");
+                    StringContent content = new StringContent(JsonConvert.SerializeObject(producto), Encoding.UTF8, "application/json");
+                    HttpResponseMessage responseMessage = await client.PostAsync("GuardarProducto", content);
+                    string apiResponse = await responseMessage.Content.ReadAsStringAsync();
+                    mensaje = apiResponse.Trim();
                 }
-            }
 
-            var categorias = await Task.Run(() => ListaCategorias());
-            ViewBag.Categorias = categorias;
-
-            return View(producto);
-        }
-
-        public async Task<IActionResult> EditProducto(int id)
-        {
-            var producto = await Task.Run(() => BuscarProductoPorId(id));
-
-            if (producto == null)
-            {
+                TempData["Mensaje"] = "Producto Registrado";
                 return RedirectToAction("ListarProducto");
             }
-            ViewBag.Categorias = new SelectList(await Task.Run(() => ListaCategorias()), "IdCategoria", "Nombre", producto.idCategoria);
 
             return View(producto);
         }
 
+        public async Task<IActionResult> EditProducto(string id)
+        {
+            if (string.IsNullOrEmpty(id)) return RedirectToAction("ListarProducto");
+
+            List<Categoria> categorias = new List<Categoria>();
+            Producto producto = null;
+
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://localhost:7191/");
+
+                HttpResponseMessage responseMessage = await client.GetAsync("api/Producto/obtenerProductoxId/" + id);
+                string apiResponse = await responseMessage.Content.ReadAsStringAsync();
+                producto = JsonConvert.DeserializeObject<Producto>(apiResponse);
+                
+
+                HttpResponseMessage responseCategorias = await client.GetAsync("api/Categoria/obtenerCategorias");
+                string apiRestCategorias = await responseCategorias.Content.ReadAsStringAsync();
+                categorias = JsonConvert.DeserializeObject<List<Categoria>>(apiRestCategorias).ToList();
+                
+            }
+            ViewBag.Categorias = new SelectList(categorias, "IdCategoria", "Nombre");
+            return View(producto);
+        }
         [HttpPost]
-        public async Task<IActionResult> EditProducto(Producto producto, IFormFile imagen)
-        {
-            if (!ModelState.IsValid)
-            {
-                ViewBag.Categorias = new SelectList(await Task.Run(() => ListaCategorias()), "IdCategoria", "Nombre", producto.idCategoria);
-                return View(producto);
-            }
-
-            if (imagen != null && imagen.Length > 0)
-            {
-                var rutaImagen = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "img", "productos", imagen.FileName);
-                using (var stream = new FileStream(rutaImagen, FileMode.Create))
-                {
-                    await imagen.CopyToAsync(stream);
-                }
-                producto.Imagen = "/img/productos/" + imagen.FileName;
-            }
-
-            var mensaje = await Task.Run(() => GuardarProducto(producto));
-            TempData["Mensaje"] = mensaje;
-
-            return RedirectToAction("ListarProducto");
-        }
-
-        public async Task<IActionResult> EliminarProducto(int id)
+        public async Task<IActionResult> EditProducto(Producto producto, IFormFile? imagen)
         {
             string mensaje = "";
-            string rutaImagen = "";
 
-
-            var producto = await Task.Run(() => BuscarProductoPorId(id));
-            if (producto != null)
+            if (ModelState.IsValid)
             {
-                rutaImagen = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", producto.Imagen.TrimStart('/'));
-
-
-                using (SqlConnection cnx = new SqlConnection(configuration["ConnectionStrings:cnx"]))
+                if (imagen != null && imagen.Length > 0)
                 {
-                    try
+                    var rutaImagen = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "img", "productos", imagen.FileName);
+                    using (var stream = new FileStream(rutaImagen, FileMode.Create))
                     {
-                        cnx.Open();
-                        SqlCommand cmd = new SqlCommand("sp_EliminarProducto", cnx);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@IdProducto", id);
-
-                        int rowsAffected = cmd.ExecuteNonQuery();
-                        mensaje = rowsAffected > 0 ? "Producto eliminado exitosamente." : "No se pudo eliminar el producto.";
-
-
-                        if (rowsAffected > 0 && System.IO.File.Exists(rutaImagen))
+                        await imagen.CopyToAsync(stream);
+                    }
+                    producto.Imagen = "/img/productos/" + imagen.FileName;
+                }
+                else
+                {
+                    using (var client = new HttpClient())
+                    {
+                        client.BaseAddress = new Uri("https://localhost:7191/");
+                        HttpResponseMessage responseMessage = await client.GetAsync("api/Producto/obtenerProductoxId/" + producto.IdProducto);
+                        if (responseMessage.IsSuccessStatusCode)
                         {
-                            System.IO.File.Delete(rutaImagen);
+                            string apiResponse = await responseMessage.Content.ReadAsStringAsync();
+                            Producto productoActual = JsonConvert.DeserializeObject<Producto>(apiResponse);
+                            producto.Imagen = productoActual.Imagen;
                         }
                     }
-                    catch (Exception ex)
-                    {
-                        mensaje = "Error al eliminar el producto: " + ex.Message;
-                    }
                 }
-            }
-            else
-            {
-                mensaje = "El producto no existe.";
-            }
-
-            TempData["Mensaje"] = mensaje;
-            return RedirectToAction("ListarProducto");
-        }
-
-        public async Task<IActionResult> VerDetalleProducto(int id)
-        {
-            var producto = await Task.Run(() => BuscarProductoPorId(id));
-
-            if (producto == null)
-            {
-                TempData["Mensaje"] = "Producto no encontrado.";
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri("https://localhost:7191/api/Producto/");
+                    StringContent content = new StringContent(JsonConvert.SerializeObject(producto), Encoding.UTF8, "application/json");
+                    HttpResponseMessage responseMessage = await client.PutAsync("ActualizarProducto", content);
+                    string apiRes = await responseMessage.Content.ReadAsStringAsync();
+                    mensaje = apiRes.Trim();
+                }
+                TempData["MensajeTipo"] = "actualizado";
+                TempData["Mensaje"] = "Producto Actualizado";
                 return RedirectToAction("ListarProducto");
             }
+            return View(await Task.Run(() => producto));
+        }
 
+
+        public async Task<IActionResult> VerDetalleProducto(string id)
+        {
+
+            if (string.IsNullOrEmpty(id)) return RedirectToAction("ListarProducto");
+
+            Producto producto = null;
+
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://localhost:7191/");
+
+                HttpResponseMessage responseMessage = await client.GetAsync("api/Producto/obtenerProductoxId/" + id);
+                string apiResponse = await responseMessage.Content.ReadAsStringAsync();
+                producto = JsonConvert.DeserializeObject<Producto>(apiResponse);
+
+            }
             return View(producto);
         }
+
+
+
     }
 }

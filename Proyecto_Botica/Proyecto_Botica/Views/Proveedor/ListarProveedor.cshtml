@@ -5,61 +5,67 @@
     ViewData["Title"] = "Listar Proveedor";
 }
 
-<div class="container mt-5">
-    <h1 class="text-center text-dark mb-4">Listar Proveedor</h1>
+<br>
 
-    <p class="text-center">
-        <a class="btn btn-primary" asp-action="AgregarProveedor">Crear Nuevo Proveedor</a>
-    </p>
+<h1 class="titulo">Listar Proveedor</h1>
 
-    <div class="table-responsive">
-        <table class="table table-striped table-bordered table-hover text-center">
-            <thead class="thead-dark">
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.First().idProveedor)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.First().nombre)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.First().telefono)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.First().correo)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.First().direccion)
-                    </th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.idProveedor)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.nombre)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.telefono)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.correo)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.direccion)
-                        </td>
-                        <td>
-                            @Html.ActionLink("Editar", "EditProveedor", new { id = item.idProveedor }, new { @class = "btn btn-warning btn-sm" }) |
-                            @Html.ActionLink("Eliminar", "EliminarProveedor", new { id = item.idProveedor }, new { @class = "btn btn-danger btn-sm" })
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
+@if (TempData["Mensaje"] != null)
+{
+    var mensajeTipo = TempData["MensajeTipo"]?.ToString();
+    var alertaClase = mensajeTipo switch
+    {
+        "eliminacion" => "alert-danger",
+        "actualizado" => "alert-warning",
+        _ => "alert-success"
+    };
+
+    <div class="alert @alertaClase" id="mensajeExito">
+        @TempData["Mensaje"]
     </div>
-</div>
+}
+
+<p>
+    <a asp-action="AgregarProveedor" class="btn btn-primary">Crear Nuevo Proveedor</a>
+</p>
+<table class="table table-striped table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Teléfono</th>
+            <th>Correo</th>
+            <th>Dirección</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.idProveedor)</td>
+                <td>@Html.DisplayFor(modelItem => item.nombre)</td>
+                <td>@Html.DisplayFor(modelItem => item.telefono)</td>
+                <td>@Html.DisplayFor(modelItem => item.correo)</td>
+                <td>@Html.DisplayFor(modelItem => item.direccion)</td>
+                <td class="boton">
+                    <div class="d-flex justify-content-around">
+                        @Html.ActionLink("Editar", "EditProveedor", new { id = item.idProveedor }, new { @class = "btn btn-success" })
+                        @Html.ActionLink("Eliminar", "EliminarProveedor", new { id = item.idProveedor },
+                                 new { @class = "btn btn-danger", onclick = "return confirm('¿Estás seguro de que deseas eliminar este proveedor?');" })
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            setTimeout(function () {
+                $("#mensajeExito").fadeOut("slow");
+            }, 5000);
+        });
+    </script>
+}
