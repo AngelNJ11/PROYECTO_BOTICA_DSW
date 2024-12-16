@@ -1,4 +1,5 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 using Proyecto_Botica_API.Models;
 using Proyecto_Botica_API.Repositorio.Interfaces;
@@ -9,6 +10,7 @@ namespace Proyecto_Botica_API.Repositorio.DAO
     public class UsuarioDAO: IUsuario
     {
         private readonly string _connection;
+
         public UsuarioDAO()
         {
             _connection = new ConfigurationBuilder().AddJsonFile("appsettings.json")
@@ -16,18 +18,21 @@ namespace Proyecto_Botica_API.Repositorio.DAO
                 .GetConnectionString("cnx");
         }
 
-        public Usuario ObtenerUsuarioPorCredenciales(string email, string password)
+        public async Task<Usuario> ObtenerUsuarioPorCredenciales(string email, string password)
         {
             Usuario? usuario = null;
+
             using (SqlConnection cnx = new SqlConnection(_connection))
             {
-                cnx.Open();
-                SqlCommand cmd = new SqlCommand("sp_UsuarioLoginn", cnx);
-                cmd.CommandType = CommandType.StoredProcedure;
+                await cnx.OpenAsync();
+                SqlCommand cmd = new SqlCommand("sp_UsuarioLoginn", cnx)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
                 cmd.Parameters.AddWithValue("@Correo", email);
                 cmd.Parameters.AddWithValue("@Contrasenia", password);
-                cnx.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
+
+                SqlDataReader reader = await cmd.ExecuteReaderAsync();
 
                 if (reader.Read())
                 {
@@ -44,11 +49,6 @@ namespace Proyecto_Botica_API.Repositorio.DAO
                 reader.Close();
             }
             return usuario;
-        }
-
-        internal void ObtenerPorCredenciales(string email, string password)
-        {
-            throw new NotImplementedException();
         }
     }
 }
