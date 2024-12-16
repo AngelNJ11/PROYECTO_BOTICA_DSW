@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
+using Newtonsoft.Json;
 using Proyecto_Botica.Models;
 using System.Data;
 
@@ -22,13 +23,13 @@ namespace Proyecto_Botica.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(string Email, string Password)
         {
-            string connectionString = _configuration.GetConnectionString("cnx");
-            Usuario usuario = await Task.Run(() => ObtenerUsuarioPorCredenciales(Email, Password));
+            Usuario usuario = await ObtenerUsuarioPorCredenciales(Email, Password);
 
             if (usuario != null)
             {
                 HttpContext.Session.SetString("UsuarioNombre", usuario.Nombre);
                 HttpContext.Session.SetString("UsuarioApellido", usuario.ApellidoPat);
+
                 if (usuario.Rol == "Administrador")
                 {
                     return RedirectToAction("Index", "Administrador");
@@ -50,36 +51,23 @@ namespace Proyecto_Botica.Controllers
             return View("Index");
         }
 
-        private Usuario ObtenerUsuarioPorCredenciales(string email, string password)
+        private async Task<Usuario> ObtenerUsuarioPorCredenciales(string email, string password)
         {
             Usuario usuario = null;
-            using (SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("cnx")))
+
+            using (var client = new HttpClient())
             {
-                SqlCommand command = new SqlCommand("sp_UsuarioLoginn", connection)
+                client.BaseAddress = new Uri("https://localhost:7191/api/Login/");
+                string requestUrl = $"obtenerUsuarioPorCredenciales?correo={email}&contrasenia={password}";
+                HttpResponseMessage response = await client.GetAsync(requestUrl);
+
+                if (response.IsSuccessStatusCode)
                 {
-                    CommandType = CommandType.StoredProcedure
-                };
-
-                command.Parameters.AddWithValue("@Correo", email);
-                command.Parameters.AddWithValue("@Contrasenia", password);
-
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-
-                if (reader.Read())
-                {
-                    usuario = new Usuario
-                    {
-                        IdUsuario = (int)reader["id_usuario"],
-                        Nombre = reader["nombre"].ToString(),
-                        ApellidoPat = reader["apellido_pat"].ToString(),
-                        ApellidoMat = reader["apellido_mat"].ToString(),
-                        Correo = reader["correo"].ToString(),
-                        Rol = reader["Rol"]?.ToString()
-                    };
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    usuario = JsonConvert.DeserializeObject<Usuario>(apiResponse);
                 }
-                reader.Close();
             }
+
             return usuario;
         }
     }
