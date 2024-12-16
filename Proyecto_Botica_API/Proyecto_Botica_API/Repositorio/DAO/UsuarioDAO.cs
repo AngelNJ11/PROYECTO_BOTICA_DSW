@@ -46,7 +46,7 @@ namespace Proyecto_Botica_API.Repositorio.DAO
             return usuario;
         }
 
-        internal void ObtenerPorCredenciales(string email, string password)
+            return usuario;
         {
             throw new NotImplementedException();
         }
