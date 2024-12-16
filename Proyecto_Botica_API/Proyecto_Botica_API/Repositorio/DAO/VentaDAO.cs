@@ -29,9 +29,9 @@ namespace Proyecto_Botica_API.Repositorio.DAO
                 {
                     venta = new Venta
                     {
-                        Fecha = dr.GetDateTime(0),
-                        total = dr.GetDecimal(1),
-                        Id = dr.GetInt32(2)
+                        Id = dr.GetInt32(0),
+                        Fecha = dr.GetDateTime(1),
+                        total = dr.GetDecimal(2)
                     };
                 }
                 dr.Close();
@@ -39,18 +39,28 @@ namespace Proyecto_Botica_API.Repositorio.DAO
             return venta;
         }
 
-        public void registrarVenta(decimal precio)
+        public string registrarVenta(decimal precio)
         {
+            string mensaje = "";
             using (SqlConnection cnx = new SqlConnection(_connection))
             {
-                cnx.Open();
-                SqlCommand cmd = new SqlCommand("usp_registrarVenta", cnx);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@fecha", DateTime.Now);
-                cmd.Parameters.AddWithValue("@total", precio);
+                try
+                {
+                    cnx.Open();
+                    SqlCommand cmd = new SqlCommand("usp_registrarVenta", cnx);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@fecha", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@total", precio);
 
-                cmd.ExecuteNonQuery();
+                    cmd.ExecuteNonQuery();
+                    mensaje = "${Se ha guardado una venta}";
+                }
+                catch (Exception ex)
+                {
+                    mensaje = "Error al guardar la venta: " + ex.Message;
+                }
             }
+            return mensaje;
         }
     }
 }

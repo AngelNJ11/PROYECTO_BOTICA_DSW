@@ -16,7 +16,7 @@ namespace Proyecto_Botica_API.Repositorio.DAO
         }
         public int registrarDetVenta(DetalleVenta detVenta)
         {
-            int rowsAffected;
+            int rowsAffected = 0;
             using (SqlConnection cnx = new SqlConnection(_connection))
             {
                 cnx.Open();

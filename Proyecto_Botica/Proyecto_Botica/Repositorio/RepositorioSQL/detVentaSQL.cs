@@ -4,14 +4,14 @@ using System.Data;
 
 namespace Proyecto_Botica.Repositorio.RepositorioSQL
 {
-    public class detVentaSQL : IDetalleVenta
+    public class detVentaSQL 
     {
         private readonly string _connection;
         public detVentaSQL()
         {
             _connection = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build().GetConnectionString("cnx");
         }
-        public int registrarDetVenta(DetalleVenta detVenta)
+       /* public int registrarDetVenta(DetalleVenta detVenta)
         {
             int rowsAffected;
             using (SqlConnection cnx = new SqlConnection(_connection))
@@ -27,6 +27,6 @@ namespace Proyecto_Botica.Repositorio.RepositorioSQL
                 rowsAffected = cmd.ExecuteNonQuery();
             }
             return rowsAffected;
-        }
+        }*/
     }
 }

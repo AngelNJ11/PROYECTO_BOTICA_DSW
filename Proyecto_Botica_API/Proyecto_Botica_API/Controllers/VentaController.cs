@@ -15,10 +15,10 @@ namespace Proyecto_Botica_API.Controllers
             return Ok(list);
         }
 
-        /*[HttpPost("registrarVenta")]public async Task<ActionResult<Venta>>RegistrarVenta(decimal precio)
+        [HttpPost("registrarVenta")]public async Task<ActionResult<Venta>>RegistrarVenta(decimal precio)
         {
-            var mensaje = await Task.Run(() => new VentaDAO().RegistrarVenta(precio));
+            var mensaje = await Task.Run(() => new VentaDAO().registrarVenta(precio));
             return Ok(mensaje);
-        }*/
+        }
     }
 }

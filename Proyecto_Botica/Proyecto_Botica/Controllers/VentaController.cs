@@ -5,19 +5,12 @@ using Proyecto_Botica.Repositorio;
 using Proyecto_Botica.Repositorio.RepositorioSQL;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
+using System.Text;
 
 namespace Proyecto_Botica.Controllers
 {
     public class VentaController : Controller
     {
-        IVenta _venta;
-        IDetalleVenta _detalleVenta;
-        public VentaController ()
-        {
-            _venta = new ventaSQL();
-            _detalleVenta = new detVentaSQL();
-        }
-
         public async Task<IActionResult> ListarProductosVenta(int idCategoria = 0)
         {
             List<Producto> lstProductos;
@@ -102,30 +95,47 @@ namespace Proyecto_Botica.Controllers
             return View(productos);
         }
 
-
-
-
-        public IActionResult Comprar()
+        public async Task<IActionResult> Comprar()
         {
             List<Producto> lstProductos;
             var jsonData = HttpContext.Session.GetString("ItemList");
             lstProductos = System.Text.Json.JsonSerializer.Deserialize<List<Producto>>(jsonData);
             
             decimal subtotal = lstProductos.Sum(x => x.Precio);
-            _venta.registrarVenta(subtotal);
-            Venta venta = _venta.obtenerUltimoRegistroVenta();
+            Venta venta = null;
             DetalleVenta detVenta = null;
             int registro = 0;
-            for (int i = 0; i < lstProductos.Count; i++)
+            using (var client = new HttpClient())
             {
-                detVenta = new DetalleVenta
+                client.BaseAddress = new Uri("https://localhost:7191/api/Venta/");
+                StringContent contentVenta = new StringContent(JsonConvert.SerializeObject(subtotal), Encoding.UTF8, "application/json");
+                HttpResponseMessage responseMessageVenta = await client.PostAsync("registrarVenta", contentVenta);
+                
+                HttpResponseMessage responseMessageObtenerVenta = await client.GetAsync("obtenerUltimoRegistroVenta");
+                string apiResponseObtenerVenta = await responseMessageObtenerVenta.Content.ReadAsStringAsync();
+                venta = JsonConvert.DeserializeObject<Venta>(apiResponseObtenerVenta);
+
+                using (var client2 = new HttpClient())
                 {
-                    IdVenta = venta.Id,
-                    IdProducto = lstProductos[i].IdProducto,
-                    cantidad = 1,
-                    precio = lstProductos[i].Precio,
-                };
-                registro = _detalleVenta.registrarDetVenta(detVenta);
+                    client2.BaseAddress = new Uri("https://localhost:7191/api/DetalleVenta/");
+                    for (int i = 0; i < lstProductos.Count; i++)
+                    {
+                        detVenta = new DetalleVenta
+                        {
+                            IdVenta = venta.Id,
+                            IdProducto = lstProductos[i].IdProducto,
+                            cantidad = 1,
+                            precio = lstProductos[i].Precio,
+                        };
+
+                        
+                        StringContent content = new StringContent(JsonConvert.SerializeObject(detVenta), Encoding.UTF8, "application/json");
+                        HttpResponseMessage responseMessage = await client2.PostAsync("registrarDetVenta", content);
+                        string apiResponse = await responseMessage.Content.ReadAsStringAsync();
+
+                        registro = int.Parse(apiResponse);
+                    }
+                }
             }
             if (registro > 0)
             {
@@ -153,32 +163,45 @@ namespace Proyecto_Botica.Controllers
             return RedirectToAction("ListarProductosVenta");
         }
 
-        public IActionResult agregarProductoAlCarrito(int idProducto = 0)
+        public async Task<IActionResult> agregarProductoAlCarrito(int idProducto = 0)
         {
-            /*List<Producto> lstProductos;
-            var jsonData = HttpContext.Session.GetString("ItemList");
-            Producto productoNuevo = _producto.obtenerProductosxId(idProducto);
 
-            if (jsonData.IsNullOrEmpty())
+            using (var client = new HttpClient())
             {
-                lstProductos = new List<Producto>();
-                HttpContext.Session.SetString("ItemList", System.Text.Json.JsonSerializer.Serialize(lstProductos));
-            }
-            else
-            {
-                lstProductos = System.Text.Json.JsonSerializer.Deserialize<List<Producto>>(jsonData);
-
-                if (idProducto != 0)
+                client.BaseAddress = new Uri("https://localhost:7191/");
+                HttpResponseMessage responseMessage = await client.GetAsync("api/Producto/obtenerProductoxId/" + idProducto);
+                if (responseMessage.IsSuccessStatusCode)
                 {
-                    var productoExistente = lstProductos.FirstOrDefault(p => p.IdProducto == idProducto);
-                    if (productoExistente == null)
+                    string apiResponse = await responseMessage.Content.ReadAsStringAsync();
+                    Producto productoActual = JsonConvert.DeserializeObject<Producto>(apiResponse);
+                    List<Producto> lstProductos;
+                    var jsonData = HttpContext.Session.GetString("ItemList");
+                    //Producto productoNuevo = _producto.obtenerProductosxId(idProducto);
+
+                    if (jsonData.IsNullOrEmpty())
                     {
-                        lstProductos.Add(productoNuevo);
+                        lstProductos = new List<Producto>();
                         HttpContext.Session.SetString("ItemList", System.Text.Json.JsonSerializer.Serialize(lstProductos));
                     }
+                    else
+                    {
+                        lstProductos = System.Text.Json.JsonSerializer.Deserialize<List<Producto>>(jsonData);
+
+                        if (idProducto != 0)
+                        {
+                            var productoExistente = lstProductos.FirstOrDefault(p => p.IdProducto == idProducto);
+                            if (productoExistente == null)
+                            {
+                                lstProductos.Add(productoActual);
+                                HttpContext.Session.SetString("ItemList", System.Text.Json.JsonSerializer.Serialize(lstProductos));
+                            }
+                        }
+                    }
+                    
                 }
-            }*/
-            return RedirectToAction("ListarProductosVenta");
+                return RedirectToAction("ListarProductosVenta");
+            }
+            
         }
     }
 }

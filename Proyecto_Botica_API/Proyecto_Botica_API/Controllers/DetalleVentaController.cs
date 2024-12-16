@@ -10,9 +10,9 @@ namespace Proyecto_Botica_API.Controllers
     public class DetalleVentaController : ControllerBase
     {
 
-        [HttpGet("registrarDetVenta")]public async Task<ActionResult<int>>registrarDetVenta(DetalleVenta detVenta)
+        [HttpPost("registrarDetVenta")]public async Task<ActionResult<int>>registrarDetVenta(DetalleVenta detVenta)
         {
-            var mensaje = await Task.Run(() => new DetalleVentaDAO().registrarDetVenta(detVenta));
+            int mensaje = await Task.Run(() => new DetalleVentaDAO().registrarDetVenta(detVenta));
             return Ok(mensaje);
         }
     }
