@@ -1,14 +1,15 @@
 ﻿using Microsoft.Data.SqlClient;
-using Proyecto_Botica.Models;
+using Proyecto_Botica_API.Models;
+using Proyecto_Botica_API.Repositorio.Interfaces;
 using System.Data;
 
 namespace Proyecto_Botica.Repositorio.RepositorioSQL
 {
-    public class ordenCompraSQL : IOrdenCompra
+    public class OrdenCompraDAO : IOrdenCompra
     {
 
         private readonly string _connection;
-        public ordenCompraSQL()
+        public OrdenCompraDAO()
         {
             _connection = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build().GetConnectionString("cnx");
         }
@@ -28,12 +29,12 @@ namespace Proyecto_Botica.Repositorio.RepositorioSQL
                 while (dr.Read())
                 {
                     ordenCompras.Add(new OrdenCompra
-                    { 
+                    {
                         IdOrdenCompra = dr.GetInt32(0),
                         IdProducto = dr.GetInt32(1),
                         IdProveedor = dr.GetInt32(2),
                         Cantidad = dr.GetInt32(3),
-                        Fecha = dr.IsDBNull(4) ? (DateTime?) null : dr.GetDateTime(4),
+                        Fecha = dr.IsDBNull(4) ? (DateTime?)null : dr.GetDateTime(4),
                         Precio = dr.GetDecimal(5)
                     });
                 }
@@ -42,10 +43,10 @@ namespace Proyecto_Botica.Repositorio.RepositorioSQL
             return ordenCompras;
         }
 
-        public String registrarOrdenComprar(OrdenCompra ordenCompra)
+        public string registrarOrdenComprar(OrdenCompra ordenCompra)
         {
 
-            String mensaje = ""; 
+            string mensaje = "";
 
             using (SqlConnection cnx = new SqlConnection(_connection))
             {
@@ -61,12 +62,14 @@ namespace Proyecto_Botica.Repositorio.RepositorioSQL
                 cmd.Parameters.AddWithValue("@fecha", ordenCompra.Fecha);
                 cmd.Parameters.AddWithValue("@precio", ordenCompra.Precio);
 
-                cmd.ExecuteNonQuery();
+                int rowsAffected = cmd.ExecuteNonQuery();
                 mensaje = "¡Éxito! La orden de compra fue registrada correctamente.";
 
             }
 
             return mensaje;
         }
+
+      
     }
 }
