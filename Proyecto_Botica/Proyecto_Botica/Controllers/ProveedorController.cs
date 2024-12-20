@@ -1,181 +1,119 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
+using Newtonsoft.Json;
 using Proyecto_Botica.Models;
 using System.Data;
+using System.Text;
 
 namespace Proyecto_Botica.Controllers
 {
     public class ProveedorController : Controller
     {
-        private readonly IConfiguration configuration;
-
-        public ProveedorController(IConfiguration config)
-        {
-            configuration = config;
-        }
-
-        public IEnumerable<Proveedor> ListaProveedores()
-        {
-            List<Proveedor> proveedores = new List<Proveedor>();
-            using (SqlConnection cnx = new SqlConnection(configuration["ConnectionStrings:cnx"]))
-            {
-                cnx.Open();
-                SqlCommand cmd = new SqlCommand("sp_ListarProveedores", cnx);
-                cmd.CommandType = CommandType.StoredProcedure;
-                SqlDataReader dr = cmd.ExecuteReader();
-
-                while (dr.Read())
-                {
-                    proveedores.Add(new Proveedor
-                    {
-                        idProveedor = dr.GetInt32(0),
-                        nombre = dr.GetString(1),
-                        telefono = int.Parse(dr.GetString(2)),
-                        correo = dr.GetString(3),
-                        direccion = dr.IsDBNull(4) ? null : dr.GetString(4)
-                    });
-                }
-                dr.Close();
-            }
-            return proveedores;
-        }
-
         public async Task<IActionResult> ListarProveedor()
         {
-            var proveedores = await Task.Run(() => ListaProveedores());
-            return View(proveedores);
-        }
-
-        private Proveedor BuscarProveedorPorId(int id)
-        {
-            Proveedor proveedor = null;
-            using (SqlConnection cnx = new SqlConnection(configuration["ConnectionStrings:cnx"]))
+            List<Proveedor> temporal = new List<Proveedor>();
+            using(var provee =  new HttpClient())
             {
-                cnx.Open();
-                SqlCommand cmd = new SqlCommand("sp_BuscarProveedorPorID", cnx);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id_proveedor", id);
+                provee.BaseAddress = new Uri("https://localhost:7191/api/Proveedor/");
+                HttpResponseMessage response = await provee.GetAsync("ListaProveedores");
+                string apiRes = await response.Content.ReadAsStringAsync();
+                temporal=JsonConvert.DeserializeObject<List<Proveedor>>(apiRes).ToList();
 
-                SqlDataReader dr = cmd.ExecuteReader();
-                if (dr.Read())
-                {
-                    proveedor = new Proveedor
-                    {
-                        idProveedor = dr.GetInt32(0),
-                        nombre = dr.GetString(1),
-                        telefono = int.Parse(dr.GetString(2)),
-                        correo = dr.GetString(3),
-                        direccion = dr.IsDBNull(4) ? null : dr.GetString(4)
-                    };
-                }
-                dr.Close();
+                    
             }
-            return proveedor;
-        }
-
-        private string GuardarProveedor(Proveedor proveedor)
-        {
-            string mensaje = "";
-            using (SqlConnection cnx = new SqlConnection(configuration["ConnectionStrings:cnx"]))
-            {
-                try
-                {
-                    cnx.Open();
-                    SqlCommand cmd;
-                    if (proveedor.idProveedor == 0)
-                    {
-                        cmd = new SqlCommand("sp_RegistrarProveedor", cnx);
-                    }
-                    else
-                    {
-                        cmd = new SqlCommand("sp_ActualizarProveedor", cnx);
-                        cmd.Parameters.AddWithValue("@id_proveedor", proveedor.idProveedor);
-                    }
-
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@nombre", proveedor.nombre);
-                    cmd.Parameters.AddWithValue("@telefono", proveedor.telefono);
-                    cmd.Parameters.AddWithValue("@correo", proveedor.correo);
-                    cmd.Parameters.AddWithValue("@direccion", proveedor.direccion ?? (object)DBNull.Value);
-
-                    int rowsAffected = cmd.ExecuteNonQuery();
-                    mensaje = rowsAffected > 0 ? "Proveedor registrado ." : "No se pudo registro el proveedor.";
-                }
-                catch (Exception ex)
-                {
-                    mensaje = "Error al registrar el proveedor: " + ex.Message;
-                }
-            }
-            return mensaje;
+            return View(await Task.Run(() => temporal));
         }
 
         public async Task<IActionResult> AgregarProveedor()
         {
-
-            return View();
+            return View(await Task.Run(()=> new Proveedor()));
         }
 
         [HttpPost]
         public async Task<IActionResult> AgregarProveedor(Proveedor proveedor)
         {
-            if (ModelState.IsValid)
+            string mensaje = "";
+            using (var provee = new HttpClient())
             {
-                var mensaje = await Task.Run(() => GuardarProveedor(proveedor));
-                TempData["Mensaje"] = mensaje;
-                return RedirectToAction("ListarProveedor");
+                provee.BaseAddress = new Uri("https://localhost:7191/api/Proveedor/");
+                StringContent content = new StringContent(JsonConvert.SerializeObject(proveedor),
+                    Encoding.UTF8, "application/json");
+
+                HttpResponseMessage response = await provee.PostAsync("GuardarProveedor", content);
+                string apiResponse = await response.Content.ReadAsStringAsync();
+                mensaje = apiResponse.Trim();
             }
 
-            return View(proveedor);
+            TempData["Mensaje"] = "Proveedor Registrado";
+
+            return RedirectToAction("ListarProveedor");
         }
 
         public async Task<IActionResult> EditProveedor(int id)
         {
-            var proveedor = await Task.Run(() => BuscarProveedorPorId(id));
-
-            if (proveedor == null)
-            {
+            if (id <= 0)
                 return RedirectToAction("ListarProveedor");
-            }
 
-            return View(proveedor);
+            Proveedor reg = new Proveedor();
+            using (var provee = new HttpClient())
+            {
+                provee.BaseAddress = new Uri("https://localhost:7191/api/Proveedor/");
+                HttpResponseMessage response = await provee.GetAsync("BuscarProveedorPorId/" + id);
+                string apiResponse = await response.Content.ReadAsStringAsync();
+                reg = JsonConvert.DeserializeObject<Proveedor>(apiResponse);
+            }
+            return View(await Task.Run(() => reg));
         }
+
 
         [HttpPost]
         public async Task<IActionResult> EditProveedor(Proveedor proveedor)
         {
-            if (!ModelState.IsValid)
+            string mensaje = "";
+            using (var provee = new HttpClient())
             {
-                return View(proveedor);
+                provee.BaseAddress = new Uri("https://localhost:7191/api/Proveedor/");
+                StringContent content = new StringContent(JsonConvert.SerializeObject(proveedor),
+                    Encoding.UTF8, "application/json");
+
+                HttpResponseMessage response = await provee.PutAsync("ActualizarProveedor", content);
+                string apiResponse = await response.Content.ReadAsStringAsync();
+                mensaje = apiResponse;
             }
-
-            var mensaje = await Task.Run(() => GuardarProveedor(proveedor));
-            TempData["Mensaje"] = mensaje;
-
+            TempData["MensajeTipo"] = "actualizado";
+            TempData["Mensaje"] = "Proveedor Actualizado";
             return RedirectToAction("ListarProveedor");
         }
 
         public async Task<IActionResult> EliminarProveedor(int id)
         {
             string mensaje = "";
-            using (SqlConnection cnx = new SqlConnection(configuration["ConnectionStrings:cnx"]))
+
+            using (var client = new HttpClient())
             {
+                client.BaseAddress = new Uri("https://localhost:7191/api/Proveedor/");
+
                 try
                 {
-                    cnx.Open();
-                    SqlCommand cmd = new SqlCommand("sp_EliminarProveedor", cnx);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@id_proveedor", id);
+                    HttpResponseMessage response = await client.DeleteAsync($"EliminarProveedor/{id}");
 
-                    int rowsAffected = cmd.ExecuteNonQuery();
-                    mensaje = rowsAffected > 0 ? "Proveedor eliminado exitosamente." : "No se pudo eliminar el proveedor.";
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string apiResponse = await response.Content.ReadAsStringAsync();
+                    }
+                    else
+                    {
+                        mensaje = "Error al eliminar el proveedor. Intente nuevamente.";
+                    }
                 }
                 catch (Exception ex)
                 {
-                    mensaje = "Error al eliminar el proveedor: " + ex.Message;
+                    mensaje = "Error al intentar eliminar el proveedor: " + ex.Message;
                 }
             }
+            TempData["MensajeTipo"] = "eliminacion";
+            TempData["Mensaje"] = "Proveedor Eliminado";
 
-            TempData["Mensaje"] = mensaje;
             return RedirectToAction("ListarProveedor");
         }
     }
